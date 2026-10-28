@@ -147,14 +147,24 @@ Stylometry does not understand what the text means or know who created it. A hum
      two off the response, so leaving them out costs you next unit's
      diagnostics. -->
 
+Submission with the first signal
+
+Request:
+
 ```bash
-$ curl -X POST http://127.0.0.1:5000/submit \
-  -H "Content-Type: application/json" \
-  -d '{"text": "...", "creator_id": "..."}'
+curl.exe --% -X POST http://127.0.0.1:5000/submit -H "Content-Type: application/json" -d "{\"text\":\"Artificial intelligence is transforming the way people work and communicate. It can automate repetitive tasks, generate written content, and assist with decision making. These systems are becoming increasingly common in schools, businesses, and everyday software.\",\"creator_id\":\"user123\"}"
 ```
+Response:
 
 ```json
-
+{
+  "confidence": 0.0,
+  "content_id": "8a2acba7-135a-4bd7-914b-f87658022044",
+  "guess": "ai",
+  "label": "placeholder",
+  "model_score": 0.7242,
+  "style_score": 0.0
+}
 ```
 
 **An appeal**
@@ -176,7 +186,22 @@ $ curl "http://127.0.0.1:5000/log?limit=3"
 ```
 
 ```json
-
+{
+  "count": 1,
+  "entries": [
+    {
+      "combined_score": null,
+      "content_id": "8a2acba7-135a-4bd7-914b-f87658022044",
+      "creator_id": "user123",
+      "guess": "ai",
+      "label": "placeholder",
+      "model_score": 0.7242,
+      "status": "decided",
+      "style_score": null,
+      "timestamp": "2026-10-28T23:47:32+00:00"
+    }
+  ]
+}
 ```
 
 ---
