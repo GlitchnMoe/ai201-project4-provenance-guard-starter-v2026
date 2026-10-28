@@ -42,63 +42,63 @@ Two things worth knowing before you pick numbers:
   a **miss**.
 
 ---
-## 1.
+## 1. False positives
 
 <!-- Your criterion. It must name a number. -->
 
-
+Of 10 pieces of writing known to be written by humans, no more than 1 may be labeled high-confidence AI.
 
 **Why this target:**
 
-
+A false positive could wrongly accuse a real writer of using AI, so I want the system to be conservative before giving its strongest AI label. I chose at most 1 out of 10 because a 10% false-positive rate is already a meaningful cost to real writers, and anything higher would make the high-confidence AI label too risky to trust.
 
 ---
 
-## 2.
+## 2. Score spread
 
 <!-- Your criterion. -->
 
-
+Across a test set containing clearly human and clearly AI-generated writing, the average combined score for the AI-generated group should be at least 0.30 higher than the average combined score for the human-written group.
 
 **Why this target:**
 
-
+If the two groups score almost the same, then the combined detector is not separating them well enough to make the confidence score meaningful. I chose a minimum average gap of 0.30 because it requires a noticeable separation without assuming that human and AI writing can be perfectly distinguished.
 
 ---
 
-## 3.
+## 3. Label coverage
 
 <!-- Your criterion. -->
 
-
+All three reader-facing labels — high-confidence human, unsure, and high-confidence AI — must each be produced by at least 1 test input.
 
 **Why this target:**
 
-
+If one of the labels can never be reached, then the score thresholds are not covering the full range of possible outcomes correctly. I chose at least one example for each label because the minimum requirement is that every label is actually reachable and can be shown to a user.
 
 ---
 
-## 4.
+## 4. Appeal path
 
 <!-- Your criterion. -->
 
-
+For 5 valid appeals submitted with an existing `content_id`, all 5 must change the submission status to `under_review` and all 5 must be recorded in the audit log with the writer's reasoning.
 
 **Why this target:**
 
-
+The appeal path exists to give writers a reliable way to challenge a decision, so it should work every time for a valid submission. I chose 5 out of 5 because an appeal failing silently would leave a writer with no way to contest a possible false positive.
 
 ---
 
-## 5.
+## 5. Bad input
 
 <!-- Your criterion. -->
 
-
+The `/submit` endpoint must reject 3 out of 3 invalid requests — one with no `text` field, one with an empty `text` value, and one with text longer than the allowed maximum — without creating a normal submission record or returning a success response.
 
 **Why this target:**
 
-
+Invalid input should be stopped before it reaches the detector because missing or unusable text could produce misleading scores or unnecessary work. I chose 3 out of 3 because these are basic validation cases that the service should handle consistently every time.
 
 ---
 
