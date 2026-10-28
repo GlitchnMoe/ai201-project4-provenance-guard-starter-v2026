@@ -39,6 +39,20 @@
 <!-- The path a submission takes, from arriving to the label a reader sees.
      Six or seven steps — this is the trace you wrote in Milestone 1. -->
 
+1. A writer sends a submission to POST /submit containing the writing in text and their creator_id.
+
+2. app.py receives the request, checks that the required information is present, and creates a unique content_id so the submission can be tracked.
+
+3. detector.py reads the submitted text and produces the model signal, a score representing how AI-like the writing appears based on language patterns learned by the local model.
+
+4. stylometry.py analyzes surface-level characteristics of the writing, such as sentence-length variation, vocabulary variety, and punctuation, and produces the style signal.
+
+5. scoring.py::combine_signals combines the model score and style score using the weighting rule I choose and produces one overall confidence score.
+
+6. scoring.py::score_to_label compares the combined score with my thresholds and maps it to one of three reader-facing outcomes: high-confidence human, unsure, or high-confidence AI.
+
+7. The service records the submission, both signal scores, combined decision, content_id, creator, and status in the audit log, then returns the result as JSON so the site can display the label to the reader.
+
 
 
 ---
@@ -55,17 +69,29 @@
 
 **What it measures:**
 
+`detector.py` uses a local language model to read the submitted text and produce a score representing how AI-like the writing appears based on language patterns the model learned during training.
+
 **Why that might differ between human and AI writing:**
 
+AI-generated writing can contain patterns in phrasing, structure, and word choice that differ from naturally written human text. A model trained to distinguish the two may be able to recognize some of those patterns.
+
 **What it can't see:**
+
+The model cannot actually know who wrote the text. A polished or formal human writer could produce language that resembles patterns associated with AI, while AI-generated text that has been edited by a person could appear more human and avoid detection.
 
 ### Signal two — the style signal
 
 **What it measures:**
 
+`stylometry.py` measures surface-level characteristics of the text rather than its meaning, such as sentence-length variation, vocabulary variety, and punctuation density.
+
 **Why that might differ between human and AI writing:**
 
+Human writing can contain irregularities and variation in sentence length, vocabulary, and punctuation, while AI-generated writing may sometimes be more uniform or consistent in these areas.
+
 **What it can't see:**
+
+Stylometry does not understand what the text means or know who created it. A human writer may naturally have a very consistent style, while AI-generated text can be prompted or edited to deliberately vary sentence length, vocabulary, and punctuation.
 
 ### The combining rule
 
