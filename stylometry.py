@@ -47,84 +47,170 @@ def words(text: str) -> list[str]:
 
 # ── The three measures — YOU BUILD THESE ─────────────────────────────────────
 
+# def sentence_length_spread(text: str) -> float:
+#     """
+#     How much sentence length varies. ← TODO
+
+#     Returns:
+#         A float. Decide yourself what scale it's on and which direction means
+#         "more human" — then write that down, because your combining rule
+#         depends on knowing it.
+
+#     A hint on what you're reaching for: the standard deviation of sentence
+#     lengths, probably divided by the mean so a long text and a short one are
+#     comparable. `statistics.stdev` is imported for you.
+
+#     Watch the edge case: a one-sentence submission has no spread at all, and
+#     `stdev` raises on fewer than two values. Decide what that should return
+#     before the attack set decides for you.
+#     """
+#     # TODO: replace this
+#     return 0.0
+
 def sentence_length_spread(text: str) -> float:
     """
-    How much sentence length varies. ← TODO
+    Measure variation in sentence lengths.
 
-    Returns:
-        A float. Decide yourself what scale it's on and which direction means
-        "more human" — then write that down, because your combining rule
-        depends on knowing it.
-
-    A hint on what you're reaching for: the standard deviation of sentence
-    lengths, probably divided by the mean so a long text and a short one are
-    comparable. `statistics.stdev` is imported for you.
-
-    Watch the edge case: a one-sentence submission has no spread at all, and
-    `stdev` raises on fewer than two values. Decide what that should return
-    before the attack set decides for you.
+    Returns the standard deviation of sentence length divided by the mean
+    sentence length. Higher values mean more variation and therefore,
+    for this signal, more human-like writing.
     """
-    # TODO: replace this
-    return 0.0
+    sents = sentences(text)
+
+    if len(sents) < 2:
+        return 0.0
+
+    lengths = [len(words(sentence)) for sentence in sents]
+
+    mean_length = statistics.mean(lengths)
+
+    if mean_length == 0:
+        return 0.0
+
+    spread = statistics.stdev(lengths) / mean_length
+
+    return round(spread, 4)
 
 
+
+# def type_token_ratio(text: str) -> float:
+#     """
+#     Unique words over total words. ← TODO
+
+#     Returns:
+#         A float between 0 and 1. Higher means more varied vocabulary.
+
+#     Worth knowing before you rely on it: this measure falls as text gets
+#     longer, because common words repeat. Two texts of different lengths aren't
+#     directly comparable on it, and if your test inputs vary a lot in length,
+#     that alone can look like a signal.
+#     """
+#     # TODO: replace this
+#     return 0.0
 def type_token_ratio(text: str) -> float:
     """
-    Unique words over total words. ← TODO
+    Unique words divided by total words.
 
-    Returns:
-        A float between 0 and 1. Higher means more varied vocabulary.
-
-    Worth knowing before you rely on it: this measure falls as text gets
-    longer, because common words repeat. Two texts of different lengths aren't
-    directly comparable on it, and if your test inputs vary a lot in length,
-    that alone can look like a signal.
+    Higher values mean more varied vocabulary and therefore more human-like
+    writing for this signal.
     """
-    # TODO: replace this
-    return 0.0
+    tokens = words(text)
+
+    if not tokens:
+        return 0.0
+
+    ratio = len(set(tokens)) / len(tokens)
+
+    return round(ratio, 4)
 
 
+# def punctuation_density(text: str) -> float:
+#     """
+#     How much punctuation, relative to length. ← TODO
+
+#     Returns:
+#         A float. Whether you count all punctuation or only some kinds — commas,
+#         semicolons, dashes — is a real choice. Semicolons and em dashes are
+#         more interesting than full stops, because they vary more between
+#         writers.
+#     """
+#     # TODO: replace this
+#     return 0.0
 def punctuation_density(text: str) -> float:
     """
-    How much punctuation, relative to length. ← TODO
+    Count stylistically interesting punctuation relative to word count.
 
-    Returns:
-        A float. Whether you count all punctuation or only some kinds — commas,
-        semicolons, dashes — is a real choice. Semicolons and em dashes are
-        more interesting than full stops, because they vary more between
-        writers.
+    Commas, semicolons, colons, dashes, question marks, and exclamation
+    marks are counted. Higher values mean more punctuation variation and
+    therefore more human-like writing for this signal.
     """
-    # TODO: replace this
-    return 0.0
+    tokens = words(text)
 
+    if not tokens:
+        return 0.0
+
+    punctuation = re.findall(r"[,;:!?—–-]", text)
+
+    density = len(punctuation) / len(tokens)
+
+    return round(density, 4)
 
 # ── Combining them ───────────────────────────────────────────────────────────
 
+# def style_signal(text: str) -> float:
+#     """
+#     The style signal as a 0–1 score. **Higher means more likely AI.** ← TODO
+
+#     Combine your three measures into one number. Same direction as
+#     `detector.model_signal`, so that `scoring.combine_signals` can treat them
+#     the same way — if one of your signals runs backwards, everything above it
+#     is wrong in a way that's hard to see.
+
+#     Two things to decide and write down:
+
+#       1. Which direction each measure points. Low spread means more AI-ish, so
+#          it needs flipping. Work out which of your three need that.
+#       2. How to get each onto a comparable scale. A raw type-token ratio sits
+#          between 0 and 1; a raw punctuation count doesn't. Adding them
+#          unscaled means whichever has the bigger numbers wins by default.
+
+#     Test it on the four calibration inputs from Milestone 4 — clearly AI,
+#     clearly human, plain conventional human writing, lightly-edited AI — before
+#     you trust it. Plain and ordinary, not formal: formal prose reads as *human*
+#     to signal one, and it is plain writing that gets accused.
+#     """
+#     # TODO: replace this
+#     return 0.5
 def style_signal(text: str) -> float:
     """
-    The style signal as a 0–1 score. **Higher means more likely AI.** ← TODO
-
-    Combine your three measures into one number. Same direction as
-    `detector.model_signal`, so that `scoring.combine_signals` can treat them
-    the same way — if one of your signals runs backwards, everything above it
-    is wrong in a way that's hard to see.
-
-    Two things to decide and write down:
-
-      1. Which direction each measure points. Low spread means more AI-ish, so
-         it needs flipping. Work out which of your three need that.
-      2. How to get each onto a comparable scale. A raw type-token ratio sits
-         between 0 and 1; a raw punctuation count doesn't. Adding them
-         unscaled means whichever has the bigger numbers wins by default.
-
-    Test it on the four calibration inputs from Milestone 4 — clearly AI,
-    clearly human, plain conventional human writing, lightly-edited AI — before
-    you trust it. Plain and ordinary, not formal: formal prose reads as *human*
-    to signal one, and it is plain writing that gets accused.
+    Combine the three style measures into a 0-1 score.
+    Higher means more likely AI.
     """
-    # TODO: replace this
-    return 0.5
 
+    spread = sentence_length_spread(text)
+    ttr = type_token_ratio(text)
+    punct = punctuation_density(text)
+
+    # Lower sentence variation is treated as more AI-like.
+    spread_ai = 1.0 - min(spread / 0.75, 1.0)
+
+    # Lower vocabulary variety is treated as more AI-like.
+    ttr_ai = 1.0 - ttr
+
+    # Low punctuation density is treated as more AI-like.
+    # 0.15 punctuation marks per word is treated as enough variation
+    # to reach the human-like end of this measure.
+    punct_ai = 1.0 - min(punct / 0.15, 1.0)
+
+    # Give sentence variation the most influence because it is the
+    # strongest stylistic idea behind this signal.
+    score = (
+        0.50 * spread_ai
+        + 0.30 * ttr_ai
+        + 0.20 * punct_ai
+    )
+
+    return round(max(0.0, min(score, 1.0)), 4)
 
 if __name__ == "__main__":
     import sys

@@ -98,11 +98,18 @@ Stylometry does not understand what the text means or know who created it. A hum
 <!-- Write the rule in words, then give the numbers. What happens when the two
      signals disagree? -->
 
-**The rule:**
+**The rule:**  
+I combine the two signals using a weighted average. The model signal receives 65% of the weight and the style signal receives 35%. Both signals use the same direction, where a higher score means more likely AI.
 
-**The numbers:**
+**The numbers:**  
+`combined_score = (0.65 × model_score) + (0.35 × style_score)`
+
+I gave the model signal more weight because it separated the clearly AI-written example more strongly in my initial tests. The style signal still has enough weight to act as a second opinion when the two signals disagree. This helps prevent one signal by itself from producing an overly confident result.
 
 **Where it lives:** `scoring.py::combine_signals`
+
+**A case where my two signals split, and what my rule does with it:**  
+For the clearly human-style example, the model signal returned `0.6499` while the style signal returned `0.2556`. The model signal leaned AI while the style signal leaned human. With my 65/35 weighting, the combined score becomes approximately `0.5119`, which moves the result toward uncertainty instead of allowing the model signal alone to strongly accuse the writing of being AI-generated.
 
 <!-- ⚠️ The grader checks your code against that line. If your rule lives
      somewhere else, say where. -->
@@ -167,6 +174,31 @@ Response:
 }
 ```
 
+**A submission**
+
+Submission with both signals and combined scoring.
+
+**Request**
+
+```bash
+curl.exe --% -X POST http://127.0.0.1:5000/submit -H "Content-Type: application/json" -d "{\"text\":\"Artificial intelligence is transforming the way people work, learn, and communicate. It offers numerous benefits, including increased efficiency, improved decision-making, and the automation of repetitive tasks.\",\"creator_id\":\"test_ai\"}"
+```
+
+**Response**
+
+```json
+{
+  "confidence": 0.6792,
+  "content_id": "be7d1efa-4cf1-4078-a8f3-b0227e278e1f",
+  "guess": "ai",
+  "label": "placeholder",
+  "model_score": 0.8577,
+  "style_score": 0.3476
+}
+```
+
+At this stage, both signal scores and the combined confidence score are real. The reader-facing label is still a placeholder because the three final label variants are implemented in Milestone 5.
+
 **An appeal**
 
 ```bash
@@ -203,6 +235,86 @@ $ curl "http://127.0.0.1:5000/log?limit=3"
   ]
 }
 ```
+After second style:
+
+```bash
+$ curl "http://127.0.0.1:5000/log?limit=6"
+```
+
+```json
+{
+  "count": 6,
+  "entries": [
+    {
+      "combined_score": null,
+      "content_id": "8a2acba7-135a-4bd7-914b-f87658022044",
+      "creator_id": "user123",
+      "guess": "ai",
+      "label": "placeholder",
+      "model_score": 0.7242,
+      "status": "decided",
+      "style_score": null,
+      "timestamp": "2026-10-28T23:47:32+00:00"
+    },
+    {
+      "combined_score": 0.6792,
+      "content_id": "9f0ac538-9dc1-42a5-a971-a131cde7d68f",
+      "creator_id": "user123",
+      "guess": "ai",
+      "label": "placeholder",
+      "model_score": 0.8577,
+      "status": "decided",
+      "style_score": 0.3476,
+      "timestamp": "2026-11-01T21:21:29+00:00"
+    },
+    {
+      "combined_score": 0.6792,
+      "content_id": "be7d1efa-4cf1-4078-a8f3-b0227e278e1f",
+      "creator_id": "test_ai",
+      "guess": "ai",
+      "label": "placeholder",
+      "model_score": 0.8577,
+      "status": "decided",
+      "style_score": 0.3476,
+      "timestamp": "2026-11-01T21:22:52+00:00"
+    },
+    {
+      "combined_score": 0.5119,
+      "content_id": "243632cb-afcb-4f5f-a74e-064f4fda88d4",
+      "creator_id": "test_human",
+      "guess": "ai",
+      "label": "placeholder",
+      "model_score": 0.6499,
+      "status": "decided",
+      "style_score": 0.2556,
+      "timestamp": "2026-11-01T21:22:58+00:00"
+    },
+    {
+      "combined_score": 0.6388,
+      "content_id": "cc55033d-b151-483f-a2da-b6660c2fcce7",
+      "creator_id": "test_formal_human",
+      "guess": "ai",
+      "label": "placeholder",
+      "model_score": 0.6489,
+      "status": "decided",
+      "style_score": 0.62,
+      "timestamp": "2026-11-01T21:23:05+00:00"
+    },
+    {
+      "combined_score": 0.3871,
+      "content_id": "bf4fd371-6297-4a6b-a9d1-601cdec03943",
+      "creator_id": "test_edited_ai",
+      "guess": "human",
+      "label": "placeholder",
+      "model_score": 0.4541,
+      "status": "decided",
+      "style_score": 0.2628,
+      "timestamp": "2026-11-01T21:23:12+00:00"
+    }
+  ]
+}
+```
+
 
 ---
 
