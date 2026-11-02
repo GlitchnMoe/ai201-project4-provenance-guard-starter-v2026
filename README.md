@@ -39,19 +39,17 @@
 <!-- The path a submission takes, from arriving to the label a reader sees.
      Six or seven steps — this is the trace you wrote in Milestone 1. -->
 
-1. A writer sends a submission to POST /submit containing the writing in text and their creator_id.
+A writer submits text to POST /submit along with a creator_id. The service creates a unique content_id for the submission
 
-2. app.py receives the request, checks that the required information is present, and creates a unique content_id so the submission can be tracked.
+The text then moves through the detection pipeline:
 
-3. detector.py reads the submitted text and produces the model signal, a score representing how AI-like the writing appears based on language patterns learned by the local model.
-
-4. stylometry.py analyzes surface-level characteristics of the writing, such as sentence-length variation, vocabulary variety, and punctuation, and produces the style signal.
-
-5. scoring.py::combine_signals combines the model score and style score using the weighting rule I choose and produces one overall confidence score.
-
-6. scoring.py::score_to_label compares the combined score with my thresholds and maps it to one of three reader-facing outcomes: high-confidence human, unsure, or high-confidence AI.
-
-7. The service records the submission, both signal scores, combined decision, content_id, creator, and status in the audit log, then returns the result as JSON so the site can display the label to the reader.
+1. `detector.py` analyzes how predictable the writing is to a local language model and produces a model score from 0 to 1.
+2. `stylometry.py` measures the shape of the writing using sentence-length variation, vocabulary variety, and punctuation density and produces a second score from 0 to 1.
+3. `scoring.py::combine_signals` combines the model score and style score using a 65% model / 35% style weighted average.
+4. `scoring.py::score_to_label` maps the combined score to one of three outcomes: high-confidence human, unsure, or high-confidence AI.
+5. The service writes the decision, both signal scores, combined score, label, creator ID, content ID, and status to `logs/audit.jsonl`.
+6. The response returned to the caller includes the `content_id`, guess, confidence score, reader-facing label, model score, and style score.
+7. If the writer believes the result is incorrect, they can send the `content_id` and their reasoning to `POST /appeal`. The appeal is appended to the audit log and the submission is marked `under_review`.
 
 
 
@@ -234,7 +232,7 @@ $ curl "http://127.0.0.1:5000/log?limit=3"
   ]
 }
 ```
-After second style:
+After second style added:
 
 ```bash
 $ curl "http://127.0.0.1:5000/log?limit=6"
@@ -350,15 +348,15 @@ After appeal made:
 
 **Moment 1**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- **What I asked for:** I asked AI to help me design a second stylometric signal using the starter functions for sentence-length spread, type-token ratio, and punctuation density.
+- **What came back:** It suggested normalizing the three measures so they all pointed in the same direction, where higher meant more AI-like, and combining them with weights of 50% sentence-length spread, 30% vocabulary repetition, and 20% punctuation density.
+- **What I changed:** I implemented the functions in `stylometry.py` and then tested them myself on AI-like, human-like, and borderline writing. The tests showed that the style signal sometimes disagreed strongly with the model signal, so I did not treat it as equally reliable when I later combined the two signals.
 
 **Moment 2**
 
-- *What I asked for:*
-- *What came back:*
-- *What I changed:*
+- **What I asked for:** I asked AI to help reason about how the two signals should be combined after I collected real scores from both of them.
+- **What came back:** It recommended a weighted average with 65% weight on the model signal and 35% on the style signal because the model signal separated the clearly AI example more strongly, while the style signal could still act as a second opinion when the two disagreed.
+- **What I changed:** I tested that rule against clearly AI, clearly human, formal human, and lightly edited AI text before keeping it. The results exposed weaknesses rather than perfectly separating every case: formal human writing scored `0.6388`, while lightly edited AI scored only `0.3871`. I kept the rule instead of changing it just to make the examples look better because those failures are useful evidence for the next unit.
 
 <!-- ═══════════════════════ UNIT 8 — THE TEST ═══════════════════════ -->
 
