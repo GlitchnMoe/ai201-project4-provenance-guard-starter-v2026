@@ -92,14 +92,10 @@ The appeal path exists to give writers a reliable way to challenge a decision, s
 
 ## 5. Bad input
 
-<!-- Your criterion. -->
+Criterion: The `/submit` endpoint must reject 3 out of 3 invalid requests with a non-success HTTP response: one request with no `text` field, one request where `text` is an empty string, and one request where `text` is `null`. None of the three requests may create a normal decision entry in the audit log.
 
-The `/submit` endpoint must reject 3 out of 3 invalid requests — one with no `text` field, one with an empty `text` value, and one with text longer than the allowed maximum — without creating a normal submission record or returning a success response.
-
-**Why this target:**
-
-Invalid input should be stopped before it reaches the detector because missing or unusable text could produce misleading scores or unnecessary work. I chose 3 out of 3 because these are basic validation cases that the service should handle consistently every time.
-
+Why I chose this target:
+Invalid input should be rejected before it reaches the detector because missing or unusable text could cause errors or produce meaningless scores. I chose 3 out of 3 because these are clearly defined malformed requests that another person can reproduce exactly without needing any additional information from me.
 ---
 
 <!-- ─────────────────────────────────────────────────────────────────────────
