@@ -156,37 +156,6 @@ def health():
 
 @app.post("/submit")
 # @limiter.limit(f"{config.RATE_LIMIT_PER_MINUTE}/minute;{config.RATE_LIMIT_PER_DAY}/day")
-# def submit():
-#     payload = request.get_json(silent=True) or {}
-
-#     text = payload.get("text", "")
-#     creator_id = payload.get("creator_id", "")
-
-#     content_id = str(uuid.uuid4())
-
-#     model_score = detector.model_signal(text)
-
-#     guess = "ai" if model_score >= 0.5 else "human"
-
-#     audit.log_decision(
-#         content_id=content_id,
-#         creator_id=creator_id,
-#         guess=guess,
-#         model_score=model_score,
-#         style_score=None,
-#         combined_score=None,
-#         label="placeholder",
-#         status="decided",
-#     )
-
-#     return jsonify({
-#         "content_id": content_id,
-#         "guess": guess,
-#         "confidence": 0.0,
-#         "label": "placeholder",
-#         "model_score": model_score,
-#         "style_score": 0.0,
-#     }), 200
 def submit():
     payload = request.get_json(silent=True) or {}
 
@@ -203,7 +172,7 @@ def submit():
         style_score
     )
 
-    guess = "ai" if combined_score >= 0.5 else "human"
+    guess, label = scoring.score_to_label(combined_score)
 
     audit.log_decision(
         content_id=content_id,
@@ -212,7 +181,7 @@ def submit():
         model_score=model_score,
         style_score=style_score,
         combined_score=combined_score,
-        label="placeholder",
+        label=label,
         status="decided",
     )
 
@@ -220,39 +189,45 @@ def submit():
         "content_id": content_id,
         "guess": guess,
         "confidence": combined_score,
-        "label": "placeholder",
+        "label": label,
         "model_score": model_score,
         "style_score": style_score,
     }), 200
 
 @app.post("/appeal")
 def appeal():
-    """
-    A writer says you got it wrong. ← TODO — Milestone 5
-
-    Expects JSON:
-        {"content_id": "...", "reasoning": "..."}
-
-    Should:
-      1. Check the content_id actually exists — `audit.entries_for(id)` tells
-         you. A typo here fails silently and looks like a broken endpoint,
-         which is the single most common way this milestone eats an hour.
-      2. Record the appeal with `audit.log_appeal(...)`, which moves the item
-         to `under_review`.
-      3. Confirm to the writer. No automatic re-checking needed.
-
-    This is the smallest endpoint in the project and the one that matters most
-    to the person on the other end. It's the only thing standing between a
-    wrong accusation and nothing at all.
-    """
     payload = request.get_json(silent=True) or {}
 
-    # TODO: delete this and build the route.
+    content_id = payload.get("content_id", "")
+    reasoning = payload.get("reasoning", "")
+
+    if not content_id or not reasoning:
+        return jsonify({
+            "error": "missing_fields",
+            "message": "content_id and reasoning are required."
+        }), 400
+
+    existing_entries = audit.entries_for(content_id)
+
+    if not existing_entries:
+        return jsonify({
+            "error": "not_found",
+            "message": "No submission exists with that content_id."
+        }), 404
+
+    creator_id = existing_entries[0].get("creator_id", "unknown")
+
+    audit.log_appeal(
+        content_id=content_id,
+        creator_id=creator_id,
+        reasoning=reasoning,
+    )
+
     return jsonify({
-        "error": "not_implemented",
-        "message": "POST /appeal isn't built yet — see the TODO in app.py.",
-        "you_sent": payload,
-    }), 501
+        "content_id": content_id,
+        "status": "under_review",
+        "message": "Appeal recorded."
+    }), 200
 
 
 # ── Already works ─────────────────────────────────────────────────────────────

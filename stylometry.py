@@ -47,26 +47,6 @@ def words(text: str) -> list[str]:
 
 # ── The three measures — YOU BUILD THESE ─────────────────────────────────────
 
-# def sentence_length_spread(text: str) -> float:
-#     """
-#     How much sentence length varies. ← TODO
-
-#     Returns:
-#         A float. Decide yourself what scale it's on and which direction means
-#         "more human" — then write that down, because your combining rule
-#         depends on knowing it.
-
-#     A hint on what you're reaching for: the standard deviation of sentence
-#     lengths, probably divided by the mean so a long text and a short one are
-#     comparable. `statistics.stdev` is imported for you.
-
-#     Watch the edge case: a one-sentence submission has no spread at all, and
-#     `stdev` raises on fewer than two values. Decide what that should return
-#     before the attack set decides for you.
-#     """
-#     # TODO: replace this
-#     return 0.0
-
 def sentence_length_spread(text: str) -> float:
     """
     Measure variation in sentence lengths.
@@ -92,21 +72,6 @@ def sentence_length_spread(text: str) -> float:
     return round(spread, 4)
 
 
-
-# def type_token_ratio(text: str) -> float:
-#     """
-#     Unique words over total words. ← TODO
-
-#     Returns:
-#         A float between 0 and 1. Higher means more varied vocabulary.
-
-#     Worth knowing before you rely on it: this measure falls as text gets
-#     longer, because common words repeat. Two texts of different lengths aren't
-#     directly comparable on it, and if your test inputs vary a lot in length,
-#     that alone can look like a signal.
-#     """
-#     # TODO: replace this
-#     return 0.0
 def type_token_ratio(text: str) -> float:
     """
     Unique words divided by total words.
@@ -123,19 +88,6 @@ def type_token_ratio(text: str) -> float:
 
     return round(ratio, 4)
 
-
-# def punctuation_density(text: str) -> float:
-#     """
-#     How much punctuation, relative to length. ← TODO
-
-#     Returns:
-#         A float. Whether you count all punctuation or only some kinds — commas,
-#         semicolons, dashes — is a real choice. Semicolons and em dashes are
-#         more interesting than full stops, because they vary more between
-#         writers.
-#     """
-#     # TODO: replace this
-#     return 0.0
 def punctuation_density(text: str) -> float:
     """
     Count stylistically interesting punctuation relative to word count.
@@ -157,30 +109,6 @@ def punctuation_density(text: str) -> float:
 
 # ── Combining them ───────────────────────────────────────────────────────────
 
-# def style_signal(text: str) -> float:
-#     """
-#     The style signal as a 0–1 score. **Higher means more likely AI.** ← TODO
-
-#     Combine your three measures into one number. Same direction as
-#     `detector.model_signal`, so that `scoring.combine_signals` can treat them
-#     the same way — if one of your signals runs backwards, everything above it
-#     is wrong in a way that's hard to see.
-
-#     Two things to decide and write down:
-
-#       1. Which direction each measure points. Low spread means more AI-ish, so
-#          it needs flipping. Work out which of your three need that.
-#       2. How to get each onto a comparable scale. A raw type-token ratio sits
-#          between 0 and 1; a raw punctuation count doesn't. Adding them
-#          unscaled means whichever has the bigger numbers wins by default.
-
-#     Test it on the four calibration inputs from Milestone 4 — clearly AI,
-#     clearly human, plain conventional human writing, lightly-edited AI — before
-#     you trust it. Plain and ordinary, not formal: formal prose reads as *human*
-#     to signal one, and it is plain writing that gets accused.
-#     """
-#     # TODO: replace this
-#     return 0.5
 def style_signal(text: str) -> float:
     """
     Combine the three style measures into a 0-1 score.
