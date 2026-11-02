@@ -17,11 +17,12 @@ doesn't, it's the service itself.
 
 Routes:
 
-    POST /ping        the worked example. Already works. Don't edit it
-    POST /submit      ← YOU BUILD THIS (Milestone 3, 4, 5)
-    POST /appeal      ← YOU BUILD THIS (Milestone 5)
-    GET  /log         the audit log. Already works
-    GET  /health      is the service up, and is the model loaded
+    POST /ping          the worked example. Already works. Don't edit it
+    POST /submit        submit text for provenance analysis
+    POST /appeal        appeal a decision
+    GET  /content/<id>  look up a submission and its current status
+    GET  /log           the audit log
+    GET  /health        is the service up, and is the model loaded
 """
 
 import uuid
@@ -229,6 +230,33 @@ def appeal():
         "message": "Appeal recorded."
     }), 200
 
+
+@app.get("/content/<content_id>")
+def get_content(content_id):
+    """
+    Return a submission's original decision and its current status.
+    """
+
+    entries = audit.entries_for(content_id)
+
+    if not entries:
+        return jsonify({
+            "error": "not_found",
+            "message": "No submission exists with that content_id."
+        }), 404
+
+    original = entries[0]
+    latest = entries[-1]
+
+    return jsonify({
+        "content_id": content_id,
+        "guess": original.get("guess"),
+        "confidence": original.get("combined_score"),
+        "label": original.get("label"),
+        "model_score": original.get("model_score"),
+        "style_score": original.get("style_score"),
+        "status": latest.get("status", original.get("status")),
+    }), 200
 
 # ── Already works ─────────────────────────────────────────────────────────────
 
