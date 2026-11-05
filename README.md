@@ -377,24 +377,33 @@ curl.exe http://127.0.0.1:5000/content/1d6fec38-573d-4365-abf9-e10c5e1f3707
 
 ## Rate Limiting
 
-**My limits:** ___ per minute, ___ per day
+**My limits:** 10 per minute, 200 per day
 
 **Why those numbers and not others:**
 <!-- Think about two people: a real writer submitting their own work a few
      times an hour, and a script sending a thousand variations to map your
      thresholds. Your numbers have to be liveable for the first and hostile to
      the second. -->
+I chose 10 submissions per minute because it allows a real writer to submit and retry several pieces of writing without immediately being blocked, while making it harder for an automated script to rapidly probe the detector with many variations. I chose 200 per day because it is much higher than I would expect a normal individual writer to need, while still placing a practical cap on sustained automated testing.
+
 
 **What a caller counts as:** <!-- per address, or per creator_id? They fail
 differently — one script can look like a thousand callers, and one household
 can look like one. -->
 
+The limiter primarily treats each creator_id as a caller. Requests sharing the same creator_id count against the same limit. If a request does not provide a usable creator_id, the limiter falls back to the request's network address.
+
+
 **The run of status codes when I pushed past it:**
+
+Produced by: run_attacks.py::run_flood
+
+15 submissions as flood_tester on 2026-11-04. Five requests were rate limited.
 
 <!-- python run_attacks.py --flood 15 -->
 
 ```
-
+200 200 200 200 200 200 200 200 200 200 429 429 429 429 429
 ```
 
 ---
