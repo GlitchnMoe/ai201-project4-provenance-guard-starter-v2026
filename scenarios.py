@@ -216,15 +216,14 @@ SCENARIOS = [
         "bodies": [
             {
                 "creator_id": "eval_bad_missing"
-                # deliberately no text field
             },
             {
                 "text": "",
                 "creator_id": "eval_bad_empty",
             },
             {
-                "text": "word " * 12000,
-                "creator_id": "eval_bad_huge",
+                "text": None,
+                "creator_id": "eval_bad_null",
             },
         ],
     },

@@ -607,7 +607,7 @@ FP03 was genuine writing from a non-native English speaker writing carefully, bu
 | 2. Score spread | AI average combined score at least 0.30 higher than human average | -0.1695 gap | -0.1695 gap | -0.1695 gap | MISSED |
 | 3. Label coverage | All 3 labels must be produced at least once | 2/3 labels | 2/3 labels | 2/3 labels | MISSED |
 | 4. Appeal path | 5 of 5 valid appeals change to `under_review` and are logged | 5/5 | 5/5 | 5/5 | MET |
-| 5. Bad input | 3 of 3 invalid requests rejected without a normal successful submission | 2/3 non-success | 2/3 non-success | 2/3 non-success | MISSED |
+| 5. Bad input | 3 of 3 invalid requests cleanly rejected with a 4xx response | 0/3 | 0/3 | 0/3 | MISSED |
 
 **Real output from one trial**, pasted as text, naming the file and function
 that produced it:
@@ -817,21 +817,89 @@ Produced by: `run_eval.py::main`
 
 **Diagnoses**
 
-<!-- For each miss AND each broken attack: the stage and the mechanism.
+### Criterion 1 — False positives: MISSED
 
-     Your service has five stages: the route, signal one, signal two, the
-     combining rule, and the label mapping.
+My target allowed no more than 1 of 10 human-written samples to be labeled high-confidence AI. All three trials labeled 4 of 10 as AI, so the target was missed in every trial.
 
-     Not a diagnosis:  "The evasion attacks got through."
-     A diagnosis:      "Four evasion inputs got through. All four had typos
-                        added to AI-generated text. My second signal measures
-                        word variety, and typos raise word variety — so it read
-                        them as more human. My combining rule weights that
-                        signal at 0.6, so it dragged the whole score down."
+**Stage: signal one, signal two, and the combining rule. Mechanism:** The falsely flagged human writing received high scores before the label was assigned. The four false positives had combined scores of `0.6843`, `0.6729`, `0.7103`, and `0.7825`. Their model scores were especially high, and several also had high style scores. Polished, structured, and predictable human writing looks AI-like to the properties my signals measure. Because signal one receives 65% of the combined score, those high model scores often push genuine human writing above the `0.65` AI threshold.
 
-     Look for a pattern. Five failures on one signal is one problem, not five. -->
+### Criterion 2 — Score spread: MISSED
 
+My target required the AI-written group to average at least `0.30` higher than the human-written group. Instead, the human group averaged `0.61498` and the AI group averaged `0.44544`, giving a gap of `-0.16954` in every trial. The groups were separated in the opposite direction from the target.
 
+**Stage: signal one, signal two, and the combining rule. Mechanism:** Both signals measure indirect characteristics such as predictability, sentence structure, vocabulary variety, and punctuation rather than actual authorship. In this test, the human examples happened to look more predictable and regular than the AI examples. The combining rule then preserved those incorrect signal relationships instead of producing the expected separation.
+
+### Criterion 3 — Label coverage: MISSED
+
+My target required all three labels to appear at least once. Every trial produced only `unsure` and `ai`, so only 2 of the 3 labels were reached.
+
+**Stage: combining rule and label mapping. Mechanism:** The human label requires a combined score of `0.35` or lower, but the lowest score in the label-coverage test was `0.4894`. None of the tested inputs therefore crossed the human threshold, so the label mapping could only return `unsure` or `ai`.
+
+### Criterion 4 — Appeal path: MET
+
+The target required all 5 valid appeals to change the submission status to `under_review` and be recorded in the audit log. All three trials were `5/5`, and every appeal showed `under_review` with a corresponding logged appeal, so this criterion was met.
+
+### Criterion 5 — Bad input: MISSED
+
+After revising the criterion so it could be measured objectively, all three invalid requests returned `500` in every trial, giving `0/3`, `0/3`, and `0/3`. None were cleanly rejected with a `4xx` response.
+
+**Stage: route. Mechanism:** `POST /submit` does not validate `text` before passing it into the detector. Missing, empty, and `null` text therefore reach downstream code that assumes usable text is present. Those failures are not converted into controlled client-error responses, so Flask returns `500` instead.
+
+### Broken attack diagnoses
+
+#### Evasion attacks — EV01 through EV09
+
+Nine of the ten evasion attacks broke the detector. `EV10` held, so it does not need a failure diagnosis.
+
+**EV01, EV04, and EV08 — Stage: signal one and combining rule. Mechanism:** These attacks changed characteristics that the model signal relies on. Typos, unusual vocabulary, or too little text lowered the model score even though the text was AI-generated. Because the model receives 65% of the final weight, the low model score pulled the combined result toward `human` or `unsure`.
+
+**EV02, EV03, and EV06 — Stage: signal two and combining rule. Mechanism:** These attacks changed sentence shape or inserted material that altered the stylometric measurements. Broken-up sentences, quotations, and extreme sentence-length variation lowered the style score and pulled otherwise suspicious text into the `unsure` range.
+
+**EV07 — Stage: signal one and signal two. Mechanism:** Padding the text with punctuation changed the surface form enough that neither signal produced a strong AI score. The combined result was therefore only `0.5798`, which mapped to `unsure`.
+
+**EV05 — Stage: signal one and signal two. Mechanism:** Heavy human editing changed both predictability and surface-level writing style. The model score fell to `0.3212` and the style score to `0.2054`, producing a combined score of `0.2807` and a human label.
+
+**EV09 — Stage: signal two and combining rule. Mechanism:** Adding a human-written opening paragraph lowered the style score to `0.3622`. Although signal one still scored the text `0.7042`, the disagreement lowered the combined result to `0.5845`, which mapped to `unsure`.
+
+**Pattern:** The evasion failures show that authorship is not what either signal directly measures. Editing sentence structure, vocabulary, punctuation, or adding human-written text can change the measured properties enough to move AI text out of the AI range.
+
+#### False-positive attacks — FP02 through FP07
+
+Six of the eight false-positive attacks broke the system. `FP01` and `FP08` held.
+
+**Stage: signal one, with signal two and the combining rule contributing in some cases. Mechanism:** Formal, technical, careful, rubric-driven, or deliberately repetitive human writing is predictable enough that signal one often treats it as AI-like. `FP02` through `FP07` all crossed the high-confidence AI threshold even though they were genuine human writing.
+
+The strongest pattern is visible in the model signal. For example, `FP03` had a model score of `0.8051`, `FP04` scored `0.8329`, `FP05` scored `0.8005`, `FP06` scored `0.8814`, and `FP07` scored `0.8816`. Because the model receives 65% of the combined score, even a more human-looking style score is sometimes unable to pull the final result below the AI threshold.
+
+**Pattern:** Signal one treats predictable human prose as evidence of AI authorship even though predictability is not the same thing as authorship. The combining rule gives that signal enough weight to produce confident false accusations.
+
+#### Malformed attacks — MF01 through MF08 and RQ01 through RQ12
+
+All 20 malformed attacks broke the system.
+
+**Stage: route. Mechanism:** `/submit` does not have sufficient input validation before the request reaches the detector and scoring pipeline.
+
+The following malformed inputs were accepted as normal `200` submissions instead of being rejected:
+
+`MF01`, `MF03`, `MF04`, `MF05`, `MF06`, `MF07`, `MF08`, `RQ02`, and `RQ06`.
+
+These include whitespace-only text, control characters, punctuation-only text, an extremely long word, emoji-only text, right-to-left text, a 60,000-character input, a missing `creator_id`, and an object used as `creator_id`. The route does not enforce usable text, valid field types, or reasonable input limits before scoring.
+
+The following malformed inputs crashed with `500` instead of receiving a controlled client-error response:
+
+`MF02`, `RQ01`, `RQ03`, `RQ04`, `RQ05`, `RQ07`, `RQ08`, `RQ09`, `RQ10`, `RQ11`, and `RQ12`.
+
+These include text that is too short, missing, numeric, a list, `null`, a JSON array instead of an object, malformed JSON, an empty body, form data, incorrect content types, and deeply nested input. The route lets invalid data reach code that assumes the expected schema or usable text. When that downstream code raises an exception, the error becomes a `500` rather than a controlled `4xx`.
+
+**Pattern:** These are not 20 unrelated bugs. They are one major route-validation problem: invalid requests are not rejected before reaching the detection pipeline.
+
+### Overall pattern
+
+The failures mostly reduce to two root problems.
+
+First, the detector's signals measure indirect properties of text instead of authorship. Predictable and structured human writing can look AI-like, while edited or stylistically unusual AI writing can look human-like. The 65% weight on signal one amplifies several of those errors.
+
+Second, `/submit` lacks strong request validation. That explains all 20 malformed attacks and Criterion 5: some invalid inputs are scored as if they were valid, while others crash the service.
 
 ---
 
