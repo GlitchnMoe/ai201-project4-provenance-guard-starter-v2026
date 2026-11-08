@@ -158,14 +158,107 @@ def health():
 @app.post("/submit")
 @limiter.limit(f"{config.RATE_LIMIT_PER_MINUTE}/minute;{config.RATE_LIMIT_PER_DAY}/day")
 def submit():
-    payload = request.get_json(silent=True) or {}
+    payload = request.get_json(silent=True)
 
-    text = payload.get("text", "")
-    creator_id = payload.get("creator_id", "")
+    # Unit 8 improvement: validate requests before either signal sees them.
+    def reject(reason, message, creator_id="unknown"):
+        audit.log_rejection(
+            creator_id=creator_id,
+            reason=reason,
+        )
+        return jsonify({
+            "error": reason,
+            "message": message,
+        }), 400
 
-    content_id = str(uuid.uuid4())
+    # The body must be valid JSON and specifically a JSON object.
+    if not isinstance(payload, dict):
+        return reject(
+            "invalid_json_body",
+            "Request body must be a JSON object."
+        )
 
-    model_score = detector.model_signal(text)
+    # creator_id must exist and be a usable string.
+    creator_id = payload.get("creator_id")
+    if not isinstance(creator_id, str) or not creator_id.strip():
+        return reject(
+            "invalid_creator_id",
+            "creator_id must be a non-empty string."
+        )
+
+    creator_id = creator_id.strip()
+
+    # text must actually be present.
+    if "text" not in payload:
+        return reject(
+            "missing_text",
+            "text is required.",
+            creator_id
+        )
+
+    text = payload.get("text")
+
+    # Reject null, lists, numbers, objects, etc.
+    if not isinstance(text, str):
+        return reject(
+            "invalid_text_type",
+            "text must be a string.",
+            creator_id
+        )
+
+    # Reject empty and whitespace-only text.
+    if not text.strip():
+        return reject(
+            "empty_text",
+            "text must not be empty or whitespace only.",
+            creator_id
+        )
+
+    # Reject abnormally large requests before they reach the model.
+    if len(text) > 20_000:
+        return reject(
+            "text_too_long",
+            "text must be 20,000 characters or fewer.",
+            creator_id
+        )
+
+    # Reject control-character input.
+    if any(ord(ch) < 32 and ch not in "\n\r\t" for ch in text):
+        return reject(
+            "invalid_control_characters",
+            "text contains unsupported control characters.",
+            creator_id
+        )
+
+    # This detector is being evaluated on normal Latin-script prose.
+    # Punctuation-only, emoji-only, and unsupported-script-only input
+    # should not be sent through the provenance signals.
+    if not any(ch.isascii() and ch.isalpha() for ch in text):
+        return reject(
+            "unsupported_text",
+            "text must contain supported Latin-script prose.",
+            creator_id
+        )
+
+    # Reject pathological single-token inputs.
+    if any(len(token) > 200 for token in text.split()):
+        return reject(
+            "invalid_text_shape",
+            "text contains an abnormally long token.",
+            creator_id
+        )
+
+    # detector.py already knows when a text is too short to score.
+    # Turn that condition into a controlled 400 instead of a Flask 500.
+    try:
+        model_score = detector.model_signal(text)
+    except ValueError as exc:
+        return reject(
+            "unscorable_text",
+            str(exc),
+            creator_id
+        )
+
     style_score = stylometry.style_signal(text)
 
     combined_score = scoring.combine_signals(
@@ -174,6 +267,8 @@ def submit():
     )
 
     guess, label = scoring.score_to_label(combined_score)
+
+    content_id = str(uuid.uuid4())
 
     audit.log_decision(
         content_id=content_id,

@@ -907,22 +907,47 @@ Second, `/submit` lacks strong request validation. That explains all 20 malforme
 
 **What I changed:**
 
+I added a validation gate at the start of `POST /submit` so malformed requests are rejected before either detection signal runs. The route now validates the JSON body, `creator_id`, and `text` before passing the text into the detector. Invalid requests return a controlled `400` response and are recorded in the audit log as rejected requests.
+
+I did not change signal one, signal two, the 65/35 combining rule, or the label thresholds.
+
 **Which diagnosis pointed at it:**
+
+Milestone 4 showed that all 20 malformed attacks and Criterion 5 shared the same route-level problem. Invalid inputs were either being accepted as normal submissions or reaching downstream detector code and causing `500` errors. Because those failures all pointed to the route, I chose input validation as my one improvement.
 
 ### Attack Run — After
 
-<!-- Same format. `run_attacks.py --label after` -->
+File: `results/attack_run_2026-11-08_1603_after.md`
 
+After adding route validation, the attack set produced:
 
+- **41 HELD**
+- **15 BROKE**
+
+Before the change, the result was:
+
+- **21 HELD**
+- **35 BROKE**
+
+All 20 malformed attacks (`MF01`–`MF08` and `RQ01`–`RQ12`) changed from **BROKE** to **HELD**. The evasion, false-positive, prompt-injection, and flood outcomes stayed the same.
+
+### Criteria — After
+
+File: `results/run_2026-11-08_1603_after.md`
+
+| Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
+|---|---|---|---|---|---|
+| 1. False positives | No more than 1 of 10 human-written samples labeled high-confidence AI | 4/10 flagged AI | 4/10 flagged AI | 4/10 flagged AI | MISSED |
+| 2. Score spread | AI average combined score at least 0.30 higher than human average | -0.1695 gap | -0.1695 gap | -0.1695 gap | MISSED |
+| 3. Label coverage | All 3 labels must be produced at least once | 2/3 labels | 2/3 labels | 2/3 labels | MISSED |
+| 4. Appeal path | 5 of 5 valid appeals change to `under_review` and are logged | 5/5 | 5/5 | 5/5 | MET |
+| 5. Bad input | 3 of 3 invalid requests cleanly rejected with a 4xx response | 3/3 | 3/3 | 3/3 | MET |
 
 **Did it help, and how do I know:**
 
-<!-- Widening the unsure band usually fixes one problem and creates another.
-     Reporting that trade honestly is worth full credit. -->
+Yes. The change fixed the specific route-level problem identified in Milestone 4. All 20 malformed attacks that previously broke the service now returned controlled `400` responses, reducing broken attacks from 35 to 15. Criterion 5 also changed from **MISSED** at `0/3` in every trial to **MET** at `3/3` in every trial.
 
-
-
----
+The change did not improve the false-positive, score-spread, or label-coverage criteria, which was expected because I did not change either signal, the combining rule, or the label thresholds.
 
 ## What's Still Broken
 
