@@ -371,6 +371,14 @@ curl.exe http://127.0.0.1:5000/content/1d6fec38-573d-4365-abf9-e10c5e1f3707
 - **What came back:** It recommended a weighted average with 65% weight on the model signal and 35% on the style signal because the model signal separated the clearly AI example more strongly, while the style signal could still act as a second opinion when the two disagreed.
 - **What I changed:** I tested that rule against clearly AI, clearly human, formal human, and lightly edited AI text before keeping it. The results exposed weaknesses rather than perfectly separating every case: formal human writing scored `0.6388`, while lightly edited AI scored only `0.3871`. I kept the rule instead of changing it just to make the examples look better because those failures are useful evidence for the next unit.
 
+**Moment 3**
+
+- **What I asked for:** I used AI to help me compare the Unit 8 attack results and identify which failures shared the same stage and mechanism instead of treating every broken attack as a separate problem.
+
+- **What came back:** It helped group the failures into signal-one weaknesses, stylometry weaknesses, combining-rule effects, and route-validation failures. The largest clear pattern was that all of the malformed requests were reaching `/submit` without enough validation.
+
+- **What I changed:** I chose only the route-validation problem for Milestone 5 and added input checks before either signal runs. I then verified the change myself by rerunning the full 56-attack set and all five acceptance criteria across three trials. The malformed attacks changed from broken to held and Criterion 5 changed from missed to met, while the detector-related failures remained, which showed that the improvement affected the problem it was intended to fix without hiding the remaining weaknesses.
+
 <!-- ═══════════════════════ UNIT 8 — THE TEST ═══════════════════════ -->
 
 ---
@@ -951,16 +959,63 @@ The change did not improve the false-positive, score-spread, or label-coverage c
 
 ## What's Still Broken
 
-<!-- For each attack still getting through and each criterion still missed:
-     what you'd do, and why you stopped. -->
+After the Milestone 5 input-validation change, 15 attacks still break the service: `EV01` through `EV09` and `FP02` through `FP07`. Criteria 1, 2, and 3 also remain missed. I stopped making changes after the validation fix because Milestone 5 required one isolated improvement so its effect could be measured separately.
 
+### Evasion attacks still broken
 
+**EV01, EV04, and EV08 — signal one**
+
+These attacks still lower the model signal enough for AI-generated text to avoid the high-confidence AI label. `EV01` uses typos, `EV04` uses unusual vocabulary, and `EV08` gives the detector less useful context.
+
+If I continued improving the system, I would recalibrate signal one using more examples containing typos, unusual vocabulary, and shorter writing so those characteristics do not automatically make text appear more human. I stopped because changing signal one would have been a second improvement after the route-validation change.
+
+**EV02, EV03, EV06, and EV07 — signal two**
+
+These attacks manipulate the surface characteristics used by the stylometry signal. Changing sentence lengths, inserting quotations, or changing punctuation makes the writing look more human according to sentence-length spread, vocabulary variety, and punctuation density.
+
+I would redesign or reduce the influence of these stylometric measurements so simple formatting changes cannot move the score as much. I stopped because that would require changing signal two and then rerunning another controlled before/after experiment.
+
+**EV05 — both signals**
+
+Heavy human editing still causes both signals to score AI-generated text as human-like. This is harder to solve with a single threshold or weighting change because both independent signals are being fooled.
+
+I would test an additional signal that measures something different from predictability and surface writing style, then evaluate whether it adds useful information. I stopped because adding another signal would be a much larger system change than the single improvement allowed in this milestone.
+
+**EV09 — signal two and combining rule**
+
+Adding a human-written opening paragraph still lowers the style score enough to pull the final result into the `unsure` range even though signal one remains relatively high.
+
+I would test different signal weights or make the detector evaluate sections of longer text separately so one human-looking section cannot pull the entire document toward human. I stopped because changing the combining rule would be another independent improvement.
+
+### False-positive attacks still broken
+
+**FP02 through FP07 — signal one and combining rule**
+
+Formal, careful, technical, rubric-driven, and repetitive human writing is still being labeled high-confidence AI. Signal one gives these human examples unusually high AI scores, and its 65% weight causes those scores to dominate the final decision.
+
+If I continued, I would first test raising the high-confidence AI threshold from `0.65` to around `0.75` and compare the reduction in false accusations against the additional AI text that would fall into the `unsure` range. I would also test reducing the weight of signal one. I stopped because either change would be a second improvement and would need its own before/after evaluation.
+
+### Criterion 1 — False positives: still MISSED
+
+The target was no more than 1 of 10 human-written samples receiving the high-confidence AI label, but all three after trials still produced 4 of 10.
+
+I would address this by making the high-confidence AI decision more conservative, most likely by raising its threshold and then measuring how many AI examples are lost on the other side. I stopped because Milestone 5 intentionally changed only route validation, so the scoring behavior was left untouched.
+
+### Criterion 2 — Score spread: still MISSED
+
+The target required the AI group's average score to be at least `0.30` higher than the human group's average. The after run still had a gap of approximately `-0.1695`, meaning the human examples actually averaged higher.
+
+A threshold change cannot fix this because the underlying scores themselves are reversed. I would collect a larger representative calibration set and redesign or recalibrate the two signals so human and AI examples separate in the intended direction. I stopped because that would require changing the detection logic itself and would be a separate experiment.
+
+### Criterion 3 — Label coverage: still MISSED
+
+The label-coverage evaluation still produced only `unsure` and `ai`, with no `human` result in any of the three trials.
+
+Before changing the label thresholds, I would improve the coverage test so it deliberately includes examples spanning low, middle, and high score regions. The human label is reachable elsewhere in the attack runs, so I would first determine whether this is primarily a test-input coverage problem rather than immediately changing the label mapping. I stopped because changing the evaluation inputs after seeing the result would make the current before/after comparison less clean.
 
 **The trade I'd make if this ran for real:**
 
-<!-- Two sentences. Fewer wrong accusations means more AI text getting through.
-     Say which way you'd go and WHO PAYS FOR IT. -->
-
+If this system ran for real, I would bias it toward avoiding false accusations even if that means more AI-generated text lands in `unsure` or gets through. The cost of that choice is paid by the site's moderation and detection goals through more missed AI, while a more aggressive detector makes real writers pay through wrongful accusations.
 
 
 <!-- ═════════════════════════════════════════════════════════════════════
