@@ -603,17 +603,216 @@ FP03 was genuine writing from a non-native English speaker writing carefully, bu
 
 | Criterion | Target | Run 1 | Run 2 | Run 3 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. False positives | No more than 1 of 10 human-written samples labeled high-confidence AI | 4/10 flagged AI | 4/10 flagged AI | 4/10 flagged AI | MISSED |
+| 2. Score spread | AI average combined score at least 0.30 higher than human average | -0.1695 gap | -0.1695 gap | -0.1695 gap | MISSED |
+| 3. Label coverage | All 3 labels must be produced at least once | 2/3 labels | 2/3 labels | 2/3 labels | MISSED |
+| 4. Appeal path | 5 of 5 valid appeals change to `under_review` and are logged | 5/5 | 5/5 | 5/5 | MET |
+| 5. Bad input | 3 of 3 invalid requests rejected without a normal successful submission | 2/3 non-success | 2/3 non-success | 2/3 non-success | MISSED |
 
 **Real output from one trial**, pasted as text, naming the file and function
 that produced it:
 
-```json
+File: `results/run_2026-11-08_1535_before.md`  
+Produced by: `run_eval.py::main`
 
+```json
+{
+  "criterion_1_false_positives": {
+    "trial": 1,
+    "results": [
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.6087,
+        "model_score": 0.6349,
+        "style_score": 0.5601
+      },
+      {
+        "status": 200,
+        "guess": "ai",
+        "confidence": 0.6843,
+        "model_score": 0.6634,
+        "style_score": 0.7232
+      },
+      {
+        "status": 200,
+        "guess": "ai",
+        "confidence": 0.6729,
+        "model_score": 0.725,
+        "style_score": 0.5761
+      },
+      {
+        "status": 200,
+        "guess": "ai",
+        "confidence": 0.7103,
+        "model_score": 0.7069,
+        "style_score": 0.7167
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.3987,
+        "model_score": 0.3345,
+        "style_score": 0.5178
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.5424,
+        "model_score": 0.4715,
+        "style_score": 0.6742
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.6378,
+        "model_score": 0.6352,
+        "style_score": 0.6425
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.6033,
+        "model_score": 0.6684,
+        "style_score": 0.4825
+      },
+      {
+        "status": 200,
+        "guess": "ai",
+        "confidence": 0.7825,
+        "model_score": 0.8498,
+        "style_score": 0.6575
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.3613,
+        "model_score": 0.2914,
+        "style_score": 0.4911
+      }
+    ]
+  },
+
+  "criterion_2_score_spread": {
+    "trial": 1,
+    "human_average": 0.61498,
+    "ai_average": 0.44544,
+    "ai_minus_human_gap": -0.16954,
+    "target_gap": 0.30,
+    "result": "MISSED"
+  },
+
+  "criterion_3_label_coverage": {
+    "trial": 1,
+    "results": [
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.6153,
+        "model_score": 0.6657,
+        "style_score": 0.5216
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.491,
+        "model_score": 0.6794,
+        "style_score": 0.1411
+      },
+      {
+        "status": 200,
+        "guess": "ai",
+        "confidence": 0.8052,
+        "model_score": 0.8446,
+        "style_score": 0.7321
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.6378,
+        "model_score": 0.7652,
+        "style_score": 0.4012
+      },
+      {
+        "status": 200,
+        "guess": "unsure",
+        "confidence": 0.4894,
+        "model_score": 0.4622,
+        "style_score": 0.54
+      }
+    ],
+    "labels_reached": [
+      "unsure",
+      "ai"
+    ],
+    "labels_reached_count": "2/3"
+  },
+
+  "criterion_4_appeal_path": {
+    "trial": 1,
+    "results": [
+      {
+        "case": 1,
+        "submit_status": 200,
+        "appeal_status": 200,
+        "status": "under_review",
+        "log_recorded": true
+      },
+      {
+        "case": 2,
+        "submit_status": 200,
+        "appeal_status": 200,
+        "status": "under_review",
+        "log_recorded": true
+      },
+      {
+        "case": 3,
+        "submit_status": 200,
+        "appeal_status": 200,
+        "status": "under_review",
+        "log_recorded": true
+      },
+      {
+        "case": 4,
+        "submit_status": 200,
+        "appeal_status": 200,
+        "status": "under_review",
+        "log_recorded": true
+      },
+      {
+        "case": 5,
+        "submit_status": 200,
+        "appeal_status": 200,
+        "status": "under_review",
+        "log_recorded": true
+      }
+    ]
+  },
+
+  "criterion_5_bad_input": {
+    "trial": 1,
+    "results": [
+      {
+        "status": 500,
+        "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "sent": "{\"creator_id\": \"eval_bad_missing\"}"
+      },
+      {
+        "status": 500,
+        "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)",
+        "sent": "(empty text)"
+      },
+      {
+        "status": 200,
+        "guess": "ai",
+        "confidence": 0.9984,
+        "model_score": 0.9975,
+        "style_score": 1.0,
+        "sent": "word word word word word word word word word word word word word word ..."
+      }
+    ]
+  }
+}
 ```
 
 **Diagnoses**
