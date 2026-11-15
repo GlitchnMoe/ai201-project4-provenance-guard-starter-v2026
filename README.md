@@ -1538,9 +1538,134 @@ Source: `run_capstone_eval.py::c5`; Flask route in `app.py`; log writer: `operat
 ```json
 {"timestamp": "2026-11-15T19:59:05.729695+00:00", "method": "POST", "path": "/ping", "input": {"fields": ["message"], "message_type": "str", "message_length": 18, "message_sha256": "e2b7da4f520a7b87"}, "output": {"ok": true, "service": "provenance-guard"}, "status_code": 200, "request_id": "2d50151573f94c7a889d1d347b8ececd", "duration_ms": 0.293, "error": null}
 ```
+---
+
+**What's Still Broken**
+
+All five original capstone acceptance criteria were MET in
+every trial before and after the improvement. There are no
+remaining failures against those five targets.
+
+However, passing those criteria does not mean the system is
+production-ready.
+
+**1. The original logging criterion was too limited.**
+
+Criterion 1 required 10/10 complete structured log records,
+but it did not require each record to have a unique identifier
+matching its corresponding HTTP response.
+
+I would tighten this criterion to require 10/10 complete logs
+with unique request IDs that exactly match their HTTP
+response headers.
+
+The correlation-ID improvement now supports this capability,
+and a separate test verified 10/10 matches. The original
+criterion was intentionally left unchanged so the formal
+before-and-after comparison remained valid.
+
+**2. Concurrent traffic has not been thoroughly tested.**
+
+The evaluations used sequential requests against a local
+Flask application. They do not establish reliability under
+simultaneous requests, sustained traffic, or multiple
+application processes.
+
+Concurrent requests could reveal contention, scheduling
+delays, or problems with writing to the shared JSONL log.
+
+I stopped here because controlled concurrency and production
+load testing were outside the scope of this local observability
+extension.
+
+**3. The latency target does not cover cold starts.**
+
+Criterion 4 required at least 9/10 warm-model submissions
+to complete within 60 milliseconds. The baseline achieved
+29/30 across three trials and the final evaluation achieved
+30/30.
+
+This does not measure the time required to download or
+initialize the GPT-2 model, application startup time,
+or long-term latency under load.
+
+The individual baseline request that exceeded 60 milliseconds
+was not investigated to a confirmed root cause.
+
+**4. AI detection accuracy is still limited.**
+
+The underlying model and stylometric scoring system can
+misclassify human and AI-generated writing, as demonstrated
+in the earlier project evaluations.
+
+This capstone intentionally did not change the classifier,
+its weighting, or its thresholds. Improving operational
+logging does not establish better authorship detection.
+
+**What I would do next:**
+
+If I had another unit, I would first implement a repeatable
+concurrent-load test that measures request failures, latency,
+and missing or mismatched operational log records under
+overlapping requests.
+
+That comes first because the system's current local,
+sequential results do not demonstrate whether its logging
+and request-tracing guarantees remain reliable when
+multiple users submit requests simultaneously.
+
+**How I Used AI**
+
+I used ChatGPT as a development assistant while planning,
+implementing, testing, and documenting this capstone.
+
+**Moment 1 — Scoping and implementation**
+
+I worked with AI to compare the possible project extensions,
+select Provenance Guard, and narrow the work to Shape A
+with Path B: Local with Logs.
+
+AI helped draft the structured logging approach, the
+acceptance evaluator, regression tests, and the commands
+for reproducing the application in Windows PowerShell.
+
+I reviewed the changes and checked them by running the
+application, executing the tests, and examining real HTTP
+responses and JSONL records rather than assuming the
+suggested implementation worked.
+
+**Moment 2 — Debugging and evaluation**
+
+AI helped investigate problems during the evaluation
+workflow, including a stale Flask server process and
+PowerShell verification issues.
+
+One PowerShell script incorrectly used the variable
+`$matches`, which conflicted with PowerShell's automatic
+`$Matches` variable. After correcting the script, I reran
+the verification and confirmed 10/10 uniquely matched
+requests.
+
+I also reran the complete after-evaluation against the
+restarted server to ensure the results actually measured
+the updated code.
+
+**What I verified myself**
+
+I ran the regression tests, inspected Git differences,
+committed the acceptance criteria before formal evaluation,
+and collected three before-trials and three after-trials
+for all five criteria.
+
+I checked the actual saved evidence and reported both the
+improvement and its limitations. AI assisted with the work,
+but the submitted outcomes are based on observed runs of
+my application rather than invented results.
 
 
 ---
 
 📖 **How to run this project: [RUNNING.md](RUNNING.md)**
+
+
 
