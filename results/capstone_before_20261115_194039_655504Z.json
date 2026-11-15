@@ -1,0 +1,4143 @@
+{
+  "label": "before",
+  "started_utc": "2026-11-15T19:40:39.655504+00:00",
+  "trials": [
+    {
+      "trial": 1,
+      "criteria": [
+        {
+          "passed": 10,
+          "total": 10,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-1-ping-0-8035bf51"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:39.669212+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"0b0b1e356c470e54\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.213, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:39.669212+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "0b0b1e356c470e54"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.213,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-1-ping-1-a9714210"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:39.687296+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"800a46642e8977eb\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.141, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:39.687296+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "800a46642e8977eb"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.141,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-1-ping-2-92b88d58"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:39.693240+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"afdd154280c00c96\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.114, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:39.693240+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "afdd154280c00c96"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.114,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-1-ping-3-77653a57"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:39.699207+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"b8f2362071c4647b\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.11, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:39.699207+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "b8f2362071c4647b"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.11,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-1-ping-4-d6b7c390"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:39.705055+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"7b7d3c4d1b916bcf\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.109, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:39.705055+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "7b7d3c4d1b916bcf"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.109,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "5799d067-0cb7-4125-8f0d-566c6d1a9e64",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:43.797462+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"5799d067-0cb7-4125-8f0d-566c6d1a9e64\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 4088.209, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:43.797462+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "5799d067-0cb7-4125-8f0d-566c6d1a9e64",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 4088.209,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "e272f09a-c959-4615-b0e4-3d50f4132cae",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:43.867460+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"e272f09a-c959-4615-b0e4-3d50f4132cae\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 41.7, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:43.867460+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "e272f09a-c959-4615-b0e4-3d50f4132cae",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 41.7,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "ee74988c-fff2-4138-8fd9-f45fa41d26a1",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:43.919067+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"ee74988c-fff2-4138-8fd9-f45fa41d26a1\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.052, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:43.919067+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "ee74988c-fff2-4138-8fd9-f45fa41d26a1",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.052,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "826fb0dd-422c-4d70-90d8-640eeda6395c",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:43.963361+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"826fb0dd-422c-4d70-90d8-640eeda6395c\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 35.644, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:43.963361+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "826fb0dd-422c-4d70-90d8-640eeda6395c",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 35.644,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "bd92e4eb-006b-4105-92e0-b54d94d9e6f5",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.013538+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"bd92e4eb-006b-4105-92e0-b54d94d9e6f5\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.115, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.013538+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "bd92e4eb-006b-4105-92e0-b54d94d9e6f5",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.115,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 3,
+          "total": 3,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "missing_text",
+                "message": "text is required."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.025694+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\"], \"has_creator_id\": true}, \"output\": {\"error\": \"missing_text\"}, \"status_code\": 400, \"duration_ms\": 1.016, \"error\": \"missing_text\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.025694+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id"
+                    ],
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "missing_text"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 1.016,
+                  "error": "missing_text"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "empty_text",
+                "message": "text must not be empty or whitespace only."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.036419+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 0, \"text_sha256\": \"e3b0c44298fc1c14\", \"has_creator_id\": true}, \"output\": {\"error\": \"empty_text\"}, \"status_code\": 400, \"duration_ms\": 1.201, \"error\": \"empty_text\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.036419+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 0,
+                    "text_sha256": "e3b0c44298fc1c14",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "empty_text"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 1.201,
+                  "error": "empty_text"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "invalid_text_type",
+                "message": "text must be a string."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.049443+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"int\", \"has_creator_id\": true}, \"output\": {\"error\": \"invalid_text_type\"}, \"status_code\": 400, \"duration_ms\": 1.731, \"error\": \"invalid_text_type\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.049443+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "int",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "invalid_text_type"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 1.731,
+                  "error": "invalid_text_type"
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 5,
+          "total": 5,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3491,
+                "content_id": "f0b44b18-c0e7-44da-be11-6464a200f147",
+                "guess": "human",
+                "label": "We think this was probably written by a person.",
+                "model_score": 0.2734,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.129321+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"4220722e8c1616ff\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"f0b44b18-c0e7-44da-be11-6464a200f147\", \"guess\": \"human\", \"confidence\": 0.3491}, \"status_code\": 200, \"duration_ms\": 70.543, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.129321+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "4220722e8c1616ff",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "f0b44b18-c0e7-44da-be11-6464a200f147",
+                    "guess": "human",
+                    "confidence": 0.3491
+                  },
+                  "status_code": 200,
+                  "duration_ms": 70.543,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3798,
+                "content_id": "11fcd150-24d2-4b2b-87df-209b3e9f8719",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3205,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.211386+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"638855539ebb6319\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"11fcd150-24d2-4b2b-87df-209b3e9f8719\", \"guess\": \"unsure\", \"confidence\": 0.3798}, \"status_code\": 200, \"duration_ms\": 68.786, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.211386+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "638855539ebb6319",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "11fcd150-24d2-4b2b-87df-209b3e9f8719",
+                    "guess": "unsure",
+                    "confidence": 0.3798
+                  },
+                  "status_code": 200,
+                  "duration_ms": 68.786,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3569,
+                "content_id": "9e3142d6-9b94-4395-910f-e5f6c0964fa1",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.2853,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.283357+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"7c897b860874cd79\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"9e3142d6-9b94-4395-910f-e5f6c0964fa1\", \"guess\": \"unsure\", \"confidence\": 0.3569}, \"status_code\": 200, \"duration_ms\": 61.42, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.283357+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "7c897b860874cd79",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "9e3142d6-9b94-4395-910f-e5f6c0964fa1",
+                    "guess": "unsure",
+                    "confidence": 0.3569
+                  },
+                  "status_code": 200,
+                  "duration_ms": 61.42,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3719,
+                "content_id": "590c22ac-43bc-492b-9a3b-5b1159dc9021",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3084,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.352140+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"78e84f229c207b77\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"590c22ac-43bc-492b-9a3b-5b1159dc9021\", \"guess\": \"unsure\", \"confidence\": 0.3719}, \"status_code\": 200, \"duration_ms\": 60.891, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.352140+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "78e84f229c207b77",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "590c22ac-43bc-492b-9a3b-5b1159dc9021",
+                    "guess": "unsure",
+                    "confidence": 0.3719
+                  },
+                  "status_code": 200,
+                  "duration_ms": 60.891,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3813,
+                "content_id": "8287e273-ad74-423c-871f-d685ccca3fca",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3229,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.431433+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"0c9b98962a3f3261\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"8287e273-ad74-423c-871f-d685ccca3fca\", \"guess\": \"unsure\", \"confidence\": 0.3813}, \"status_code\": 200, \"duration_ms\": 68.105, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.431433+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "0c9b98962a3f3261",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "8287e273-ad74-423c-871f-d685ccca3fca",
+                    "guess": "unsure",
+                    "confidence": 0.3813
+                  },
+                  "status_code": 200,
+                  "duration_ms": 68.105,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 9,
+          "total": 10,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "4b5ca518-bb42-4ecd-90de-2972ebfcc0a0",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.533467+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"4b5ca518-bb42-4ecd-90de-2972ebfcc0a0\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.213, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.533467+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "4b5ca518-bb42-4ecd-90de-2972ebfcc0a0",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.213,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "524ab22f-d4f5-471f-b6b4-8f69301cf312",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.583594+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"524ab22f-d4f5-471f-b6b4-8f69301cf312\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 38.638, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.583594+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "524ab22f-d4f5-471f-b6b4-8f69301cf312",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 38.638,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "b637133d-3a6e-47ef-b271-3afc12f2adf1",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.640221+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"b637133d-3a6e-47ef-b271-3afc12f2adf1\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 45.734, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.640221+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "b637133d-3a6e-47ef-b271-3afc12f2adf1",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 45.734,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "49077df3-3e78-437f-a780-9d3f5ec8dd08",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.695407+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"49077df3-3e78-437f-a780-9d3f5ec8dd08\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 44.925, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.695407+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "49077df3-3e78-437f-a780-9d3f5ec8dd08",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 44.925,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "c2a7ba87-d7e1-4168-9f7e-1ec459bde8f0",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.751368+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"c2a7ba87-d7e1-4168-9f7e-1ec459bde8f0\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 45.945, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.751368+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "c2a7ba87-d7e1-4168-9f7e-1ec459bde8f0",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 45.945,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "e9576df7-6eca-44a9-a534-808f023a831b",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.801150+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"e9576df7-6eca-44a9-a534-808f023a831b\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.403, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.801150+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "e9576df7-6eca-44a9-a534-808f023a831b",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.403,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "625f5821-a733-484a-911b-808c1c23bde1",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.893095+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"625f5821-a733-484a-911b-808c1c23bde1\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 65.74, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.893095+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "625f5821-a733-484a-911b-808c1c23bde1",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 65.74,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "b2ee5c8e-7419-411e-8609-254d35d01c4e",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:44.953241+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"b2ee5c8e-7419-411e-8609-254d35d01c4e\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 48.882, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:44.953241+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "b2ee5c8e-7419-411e-8609-254d35d01c4e",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 48.882,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "9f1e21d0-c4c7-44c9-9605-5f00b5daf00c",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.019511+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"9f1e21d0-c4c7-44c9-9605-5f00b5daf00c\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 45.855, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.019511+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "9f1e21d0-c4c7-44c9-9605-5f00b5daf00c",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 45.855,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "1b288af1-575d-46ca-81e8-4af4f7b68ab8",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.069244+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"1b288af1-575d-46ca-81e8-4af4f7b68ab8\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.43, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.069244+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "1b288af1-575d-46ca-81e8-4af4f7b68ab8",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.43,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ],
+          "warmup": {
+            "method": "POST",
+            "path": "/submit",
+            "status": 200,
+            "body": {
+              "confidence": 0.6263,
+              "content_id": "098c4fa8-2825-4d89-b9d6-3a9f94360f75",
+              "guess": "unsure",
+              "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+              "model_score": 0.7487,
+              "style_score": 0.3989
+            },
+            "log_lines": [
+              "{\"timestamp\": \"2026-11-15T19:40:44.484506+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"098c4fa8-2825-4d89-b9d6-3a9f94360f75\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 41.921, \"error\": null}"
+            ],
+            "entries": [
+              {
+                "timestamp": "2026-11-15T19:40:44.484506+00:00",
+                "method": "POST",
+                "path": "/submit",
+                "input": {
+                  "fields": [
+                    "creator_id",
+                    "text"
+                  ],
+                  "text_type": "str",
+                  "text_length": 188,
+                  "text_sha256": "ba0a77d6e378d066",
+                  "has_creator_id": true
+                },
+                "output": {
+                  "content_id": "098c4fa8-2825-4d89-b9d6-3a9f94360f75",
+                  "guess": "unsure",
+                  "confidence": 0.6263
+                },
+                "status_code": 200,
+                "duration_ms": 41.921,
+                "error": null
+              }
+            ],
+            "transport_error": null
+          },
+          "durations_ms": [
+            40.213,
+            38.638,
+            45.734,
+            44.925,
+            45.945,
+            40.403,
+            65.74,
+            48.882,
+            45.855,
+            40.43
+          ]
+        },
+        {
+          "passed": 5,
+          "total": 5,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "regression-trial-1"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.079122+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 18, \"message_sha256\": \"e2b7da4f520a7b87\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.203, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.079122+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 18,
+                    "message_sha256": "e2b7da4f520a7b87"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.203,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "GET",
+              "path": "/health",
+              "status": 200,
+              "body": {
+                "detector_loaded": true,
+                "detector_model": "gpt2",
+                "log_entries": 494,
+                "ok": true,
+                "rate_limiting": true
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.101452+00:00\", \"method\": \"GET\", \"path\": \"/health\", \"input\": {\"body_type\": \"NoneType\"}, \"output\": {\"ok\": true}, \"status_code\": 200, \"duration_ms\": 12.549, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.101452+00:00",
+                  "method": "GET",
+                  "path": "/health",
+                  "input": {
+                    "body_type": "NoneType"
+                  },
+                  "output": {
+                    "ok": true
+                  },
+                  "status_code": 200,
+                  "duration_ms": 12.549,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "9293a954-5c72-4304-9a8e-a01340d5d3f2",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.160267+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"9293a954-5c72-4304-9a8e-a01340d5d3f2\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 43.247, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.160267+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "9293a954-5c72-4304-9a8e-a01340d5d3f2",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 43.247,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/appeal",
+              "status": 400,
+              "body": {
+                "error": "missing_fields",
+                "message": "content_id and reasoning are required."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.169279+00:00\", \"method\": \"POST\", \"path\": \"/appeal\", \"input\": {\"fields\": []}, \"output\": {\"error\": \"missing_fields\"}, \"status_code\": 400, \"duration_ms\": 0.152, \"error\": \"missing_fields\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.169279+00:00",
+                  "method": "POST",
+                  "path": "/appeal",
+                  "input": {
+                    "fields": []
+                  },
+                  "output": {
+                    "error": "missing_fields"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 0.152,
+                  "error": "missing_fields"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "GET",
+              "path": "/content/8ceb4041-5aeb-4cff-90a6-7516fffbd6e5",
+              "status": 404,
+              "body": {
+                "error": "not_found",
+                "message": "No submission exists with that content_id."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.186049+00:00\", \"method\": \"GET\", \"path\": \"/content/8ceb4041-5aeb-4cff-90a6-7516fffbd6e5\", \"input\": {\"body_type\": \"NoneType\"}, \"output\": {\"error\": \"not_found\"}, \"status_code\": 404, \"duration_ms\": 7.334, \"error\": \"not_found\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.186049+00:00",
+                  "method": "GET",
+                  "path": "/content/8ceb4041-5aeb-4cff-90a6-7516fffbd6e5",
+                  "input": {
+                    "body_type": "NoneType"
+                  },
+                  "output": {
+                    "error": "not_found"
+                  },
+                  "status_code": 404,
+                  "duration_ms": 7.334,
+                  "error": "not_found"
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "criteria": [
+        {
+          "passed": 10,
+          "total": 10,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-2-ping-0-4125b0c4"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.196001+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"47b5e4036f8ecb26\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.161, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.196001+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "47b5e4036f8ecb26"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.161,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-2-ping-1-f55d3e2a"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.205022+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"656ea2acec38bfeb\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.183, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.205022+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "656ea2acec38bfeb"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.183,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-2-ping-2-52e0eb74"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.215310+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"a6e98dd7de978e8b\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.219, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.215310+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "a6e98dd7de978e8b"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.219,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-2-ping-3-202581d2"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.229083+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"e878992ec9962a6c\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.302, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.229083+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "e878992ec9962a6c"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.302,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-2-ping-4-3e14ed31"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.242557+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"aac333402c5ba6bc\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.255, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.242557+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "aac333402c5ba6bc"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.255,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "30f0bf6e-77c2-4f82-84c1-1c85d2c4dbb7",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.303079+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"30f0bf6e-77c2-4f82-84c1-1c85d2c4dbb7\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 48.527, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.303079+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "30f0bf6e-77c2-4f82-84c1-1c85d2c4dbb7",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 48.527,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "42893021-9a0c-4f49-a6f2-94507f077d9a",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.362173+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"42893021-9a0c-4f49-a6f2-94507f077d9a\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 45.924, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.362173+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "42893021-9a0c-4f49-a6f2-94507f077d9a",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 45.924,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "8a1205cc-7960-463f-a3c2-37ed8ba52a8f",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.411562+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"8a1205cc-7960-463f-a3c2-37ed8ba52a8f\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 37.987, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.411562+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "8a1205cc-7960-463f-a3c2-37ed8ba52a8f",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 37.987,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "5f21ab9e-4f4e-4031-ace3-e5509a7d4877",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.461400+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"5f21ab9e-4f4e-4031-ace3-e5509a7d4877\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.087, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.461400+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "5f21ab9e-4f4e-4031-ace3-e5509a7d4877",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.087,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "7dc150be-6fb6-46f5-8ebd-633388276643",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.515080+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"7dc150be-6fb6-46f5-8ebd-633388276643\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 43.673, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.515080+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "7dc150be-6fb6-46f5-8ebd-633388276643",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 43.673,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 3,
+          "total": 3,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "missing_text",
+                "message": "text is required."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.526646+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\"], \"has_creator_id\": true}, \"output\": {\"error\": \"missing_text\"}, \"status_code\": 400, \"duration_ms\": 0.893, \"error\": \"missing_text\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.526646+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id"
+                    ],
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "missing_text"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 0.893,
+                  "error": "missing_text"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "empty_text",
+                "message": "text must not be empty or whitespace only."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.536850+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 0, \"text_sha256\": \"e3b0c44298fc1c14\", \"has_creator_id\": true}, \"output\": {\"error\": \"empty_text\"}, \"status_code\": 400, \"duration_ms\": 0.763, \"error\": \"empty_text\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.536850+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 0,
+                    "text_sha256": "e3b0c44298fc1c14",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "empty_text"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 0.763,
+                  "error": "empty_text"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "invalid_text_type",
+                "message": "text must be a string."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.550110+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"int\", \"has_creator_id\": true}, \"output\": {\"error\": \"invalid_text_type\"}, \"status_code\": 400, \"duration_ms\": 1.638, \"error\": \"invalid_text_type\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.550110+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "int",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "invalid_text_type"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 1.638,
+                  "error": "invalid_text_type"
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 5,
+          "total": 5,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.376,
+                "content_id": "2ee4a2a0-47f5-4b74-b931-a45a64f43fd0",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3148,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.627429+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"1b6a678a8f25c49c\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"2ee4a2a0-47f5-4b74-b931-a45a64f43fd0\", \"guess\": \"unsure\", \"confidence\": 0.376}, \"status_code\": 200, \"duration_ms\": 66.208, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.627429+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "1b6a678a8f25c49c",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "2ee4a2a0-47f5-4b74-b931-a45a64f43fd0",
+                    "guess": "unsure",
+                    "confidence": 0.376
+                  },
+                  "status_code": 200,
+                  "duration_ms": 66.208,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3829,
+                "content_id": "f3d85d65-24b1-4f11-b6a7-7771887f6248",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3253,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.711444+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"0289aee0411bad2e\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"f3d85d65-24b1-4f11-b6a7-7771887f6248\", \"guess\": \"unsure\", \"confidence\": 0.3829}, \"status_code\": 200, \"duration_ms\": 72.566, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.711444+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "0289aee0411bad2e",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "f3d85d65-24b1-4f11-b6a7-7771887f6248",
+                    "guess": "unsure",
+                    "confidence": 0.3829
+                  },
+                  "status_code": 200,
+                  "duration_ms": 72.566,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3814,
+                "content_id": "f70bc2a0-71d1-4209-b1ae-368fb697b411",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.323,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.785110+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"e197826e62ba38f9\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"f70bc2a0-71d1-4209-b1ae-368fb697b411\", \"guess\": \"unsure\", \"confidence\": 0.3814}, \"status_code\": 200, \"duration_ms\": 62.01, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.785110+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "e197826e62ba38f9",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "f70bc2a0-71d1-4209-b1ae-368fb697b411",
+                    "guess": "unsure",
+                    "confidence": 0.3814
+                  },
+                  "status_code": 200,
+                  "duration_ms": 62.01,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3582,
+                "content_id": "7f24e818-df94-40a7-88f7-ad9e766ed79b",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.2873,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.856382+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"77a08611f4daac1c\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"7f24e818-df94-40a7-88f7-ad9e766ed79b\", \"guess\": \"unsure\", \"confidence\": 0.3582}, \"status_code\": 200, \"duration_ms\": 61.171, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.856382+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "77a08611f4daac1c",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "7f24e818-df94-40a7-88f7-ad9e766ed79b",
+                    "guess": "unsure",
+                    "confidence": 0.3582
+                  },
+                  "status_code": 200,
+                  "duration_ms": 61.171,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3611,
+                "content_id": "371f55a0-7720-4501-a499-5495339649ea",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.2918,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:45.936538+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"4bf53cbb69803300\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"371f55a0-7720-4501-a499-5495339649ea\", \"guess\": \"unsure\", \"confidence\": 0.3611}, \"status_code\": 200, \"duration_ms\": 67.568, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:45.936538+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "4bf53cbb69803300",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "371f55a0-7720-4501-a499-5495339649ea",
+                    "guess": "unsure",
+                    "confidence": 0.3611
+                  },
+                  "status_code": 200,
+                  "duration_ms": 67.568,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 10,
+          "total": 10,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "75059f20-244c-4dbe-bf83-62fe40b0045a",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.039501+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"75059f20-244c-4dbe-bf83-62fe40b0045a\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 42.152, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.039501+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "75059f20-244c-4dbe-bf83-62fe40b0045a",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 42.152,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "2f75f0dc-3de9-47c6-a707-e95739bb3d17",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.089171+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"2f75f0dc-3de9-47c6-a707-e95739bb3d17\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 39.931, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.089171+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "2f75f0dc-3de9-47c6-a707-e95739bb3d17",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 39.931,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "9b78da8c-bd98-472d-9d8f-f45eefc4eeb2",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.143513+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"9b78da8c-bd98-472d-9d8f-f45eefc4eeb2\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 43.741, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.143513+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "9b78da8c-bd98-472d-9d8f-f45eefc4eeb2",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 43.741,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "7aa89ffc-f44d-403e-921f-281313312488",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.197006+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"7aa89ffc-f44d-403e-921f-281313312488\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 42.204, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.197006+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "7aa89ffc-f44d-403e-921f-281313312488",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 42.204,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "4c60414b-8f19-43f8-bf8d-4972f4c6f19b",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.248446+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"4c60414b-8f19-43f8-bf8d-4972f4c6f19b\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.812, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.248446+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "4c60414b-8f19-43f8-bf8d-4972f4c6f19b",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.812,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "1c443aee-cb68-4ea4-be77-ec7d5c72dddd",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.297864+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"1c443aee-cb68-4ea4-be77-ec7d5c72dddd\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.039, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.297864+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "1c443aee-cb68-4ea4-be77-ec7d5c72dddd",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.039,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "8c968837-7eca-4160-b88c-438872d38de9",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.351365+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"8c968837-7eca-4160-b88c-438872d38de9\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 43.088, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.351365+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "8c968837-7eca-4160-b88c-438872d38de9",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 43.088,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "1bb5d841-15d9-4d15-8370-ee920166b4e3",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.405238+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"1bb5d841-15d9-4d15-8370-ee920166b4e3\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 44.325, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.405238+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "1bb5d841-15d9-4d15-8370-ee920166b4e3",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 44.325,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "45ec7234-c969-49fa-bede-05d544689cdd",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.457250+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"45ec7234-c969-49fa-bede-05d544689cdd\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 41.723, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.457250+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "45ec7234-c969-49fa-bede-05d544689cdd",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 41.723,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "e4cc4de9-491a-4096-820d-69321f5da0f0",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.506520+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"e4cc4de9-491a-4096-820d-69321f5da0f0\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.655, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.506520+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "e4cc4de9-491a-4096-820d-69321f5da0f0",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.655,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ],
+          "warmup": {
+            "method": "POST",
+            "path": "/submit",
+            "status": 200,
+            "body": {
+              "confidence": 0.6263,
+              "content_id": "aa1d130e-99c3-451d-affb-236da2b24bef",
+              "guess": "unsure",
+              "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+              "model_score": 0.7487,
+              "style_score": 0.3989
+            },
+            "log_lines": [
+              "{\"timestamp\": \"2026-11-15T19:40:45.988445+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"aa1d130e-99c3-451d-affb-236da2b24bef\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 41.665, \"error\": null}"
+            ],
+            "entries": [
+              {
+                "timestamp": "2026-11-15T19:40:45.988445+00:00",
+                "method": "POST",
+                "path": "/submit",
+                "input": {
+                  "fields": [
+                    "creator_id",
+                    "text"
+                  ],
+                  "text_type": "str",
+                  "text_length": 188,
+                  "text_sha256": "ba0a77d6e378d066",
+                  "has_creator_id": true
+                },
+                "output": {
+                  "content_id": "aa1d130e-99c3-451d-affb-236da2b24bef",
+                  "guess": "unsure",
+                  "confidence": 0.6263
+                },
+                "status_code": 200,
+                "duration_ms": 41.665,
+                "error": null
+              }
+            ],
+            "transport_error": null
+          },
+          "durations_ms": [
+            42.152,
+            39.931,
+            43.741,
+            42.204,
+            40.812,
+            40.039,
+            43.088,
+            44.325,
+            41.723,
+            40.655
+          ]
+        },
+        {
+          "passed": 5,
+          "total": 5,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "regression-trial-2"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.519168+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 18, \"message_sha256\": \"0fa0d57b3df80cc8\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.696, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.519168+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 18,
+                    "message_sha256": "0fa0d57b3df80cc8"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.696,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "GET",
+              "path": "/health",
+              "status": 200,
+              "body": {
+                "detector_loaded": true,
+                "detector_model": "gpt2",
+                "log_entries": 519,
+                "ok": true,
+                "rate_limiting": true
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.549058+00:00\", \"method\": \"GET\", \"path\": \"/health\", \"input\": {\"body_type\": \"NoneType\"}, \"output\": {\"ok\": true}, \"status_code\": 200, \"duration_ms\": 13.746, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.549058+00:00",
+                  "method": "GET",
+                  "path": "/health",
+                  "input": {
+                    "body_type": "NoneType"
+                  },
+                  "output": {
+                    "ok": true
+                  },
+                  "status_code": 200,
+                  "duration_ms": 13.746,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "164e4247-6c13-4b7b-a703-1987731bab21",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.605268+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"164e4247-6c13-4b7b-a703-1987731bab21\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 41.724, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.605268+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "164e4247-6c13-4b7b-a703-1987731bab21",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 41.724,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/appeal",
+              "status": 400,
+              "body": {
+                "error": "missing_fields",
+                "message": "content_id and reasoning are required."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.615537+00:00\", \"method\": \"POST\", \"path\": \"/appeal\", \"input\": {\"fields\": []}, \"output\": {\"error\": \"missing_fields\"}, \"status_code\": 400, \"duration_ms\": 0.188, \"error\": \"missing_fields\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.615537+00:00",
+                  "method": "POST",
+                  "path": "/appeal",
+                  "input": {
+                    "fields": []
+                  },
+                  "output": {
+                    "error": "missing_fields"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 0.188,
+                  "error": "missing_fields"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "GET",
+              "path": "/content/a22f4a3c-c8c4-49cb-abba-490c488385a3",
+              "status": 404,
+              "body": {
+                "error": "not_found",
+                "message": "No submission exists with that content_id."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.635745+00:00\", \"method\": \"GET\", \"path\": \"/content/a22f4a3c-c8c4-49cb-abba-490c488385a3\", \"input\": {\"body_type\": \"NoneType\"}, \"output\": {\"error\": \"not_found\"}, \"status_code\": 404, \"duration_ms\": 10.351, \"error\": \"not_found\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.635745+00:00",
+                  "method": "GET",
+                  "path": "/content/a22f4a3c-c8c4-49cb-abba-490c488385a3",
+                  "input": {
+                    "body_type": "NoneType"
+                  },
+                  "output": {
+                    "error": "not_found"
+                  },
+                  "status_code": 404,
+                  "duration_ms": 10.351,
+                  "error": "not_found"
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "criteria": [
+        {
+          "passed": 10,
+          "total": 10,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-3-ping-0-4053037c"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.647745+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"90e1b70f221ea302\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.194, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.647745+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "90e1b70f221ea302"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.194,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-3-ping-1-e0e65310"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.660262+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"c6b9ac715cad9b0a\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.213, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.660262+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "c6b9ac715cad9b0a"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.213,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-3-ping-2-3e78f72b"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.674782+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"29e3d1064507d494\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.313, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.674782+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "29e3d1064507d494"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.313,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-3-ping-3-a9d00fed"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.690031+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"083823c5f1e3fbfc\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.306, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.690031+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "083823c5f1e3fbfc"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.306,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "capstone-c1-trial-3-ping-4-b6e07ff6"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.703294+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 35, \"message_sha256\": \"a2dc872f0e66deb3\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.241, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.703294+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 35,
+                    "message_sha256": "a2dc872f0e66deb3"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.241,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "cda87c82-773d-4370-8ec4-b1775ee5cf15",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.757448+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"cda87c82-773d-4370-8ec4-b1775ee5cf15\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 43.645, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.757448+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "cda87c82-773d-4370-8ec4-b1775ee5cf15",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 43.645,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "0be7ee4e-393b-41df-a0bd-4bf076ee976d",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.807384+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"0be7ee4e-393b-41df-a0bd-4bf076ee976d\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 38.879, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.807384+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "0be7ee4e-393b-41df-a0bd-4bf076ee976d",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 38.879,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "dde7f856-78ef-4514-9162-56005786e892",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.861276+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"dde7f856-78ef-4514-9162-56005786e892\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 41.377, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.861276+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "dde7f856-78ef-4514-9162-56005786e892",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 41.377,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "2ab7615d-0e34-4b02-bec3-5430296e5b28",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.911418+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"2ab7615d-0e34-4b02-bec3-5430296e5b28\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.587, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.911418+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "2ab7615d-0e34-4b02-bec3-5430296e5b28",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.587,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "0558c219-6f05-4173-8db1-9167df3db846",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.964276+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"0558c219-6f05-4173-8db1-9167df3db846\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 42.78, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.964276+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "0558c219-6f05-4173-8db1-9167df3db846",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 42.78,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 3,
+          "total": 3,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "missing_text",
+                "message": "text is required."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.974717+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\"], \"has_creator_id\": true}, \"output\": {\"error\": \"missing_text\"}, \"status_code\": 400, \"duration_ms\": 0.988, \"error\": \"missing_text\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.974717+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id"
+                    ],
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "missing_text"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 0.988,
+                  "error": "missing_text"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "empty_text",
+                "message": "text must not be empty or whitespace only."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.983997+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 0, \"text_sha256\": \"e3b0c44298fc1c14\", \"has_creator_id\": true}, \"output\": {\"error\": \"empty_text\"}, \"status_code\": 400, \"duration_ms\": 0.7, \"error\": \"empty_text\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.983997+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 0,
+                    "text_sha256": "e3b0c44298fc1c14",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "empty_text"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 0.7,
+                  "error": "empty_text"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 400,
+              "body": {
+                "error": "invalid_text_type",
+                "message": "text must be a string."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:46.997623+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"int\", \"has_creator_id\": true}, \"output\": {\"error\": \"invalid_text_type\"}, \"status_code\": 400, \"duration_ms\": 1.15, \"error\": \"invalid_text_type\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:46.997623+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "int",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "error": "invalid_text_type"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 1.15,
+                  "error": "invalid_text_type"
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 5,
+          "total": 5,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3839,
+                "content_id": "0e195b73-ff1e-49fe-8197-2bfa504fd67e",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3268,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.087548+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"fba4f0a3597b97aa\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"0e195b73-ff1e-49fe-8197-2bfa504fd67e\", \"guess\": \"unsure\", \"confidence\": 0.3839}, \"status_code\": 200, \"duration_ms\": 77.113, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.087548+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "fba4f0a3597b97aa",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "0e195b73-ff1e-49fe-8197-2bfa504fd67e",
+                    "guess": "unsure",
+                    "confidence": 0.3839
+                  },
+                  "status_code": 200,
+                  "duration_ms": 77.113,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.4074,
+                "content_id": "19e03bdc-b3cf-4207-a607-b2a97bc33fd1",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.363,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.171443+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"a0d834daa5bda888\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"19e03bdc-b3cf-4207-a607-b2a97bc33fd1\", \"guess\": \"unsure\", \"confidence\": 0.4074}, \"status_code\": 200, \"duration_ms\": 72.656, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.171443+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "a0d834daa5bda888",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "19e03bdc-b3cf-4207-a607-b2a97bc33fd1",
+                    "guess": "unsure",
+                    "confidence": 0.4074
+                  },
+                  "status_code": 200,
+                  "duration_ms": 72.656,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3741,
+                "content_id": "8d1476b8-9b97-415c-bcbf-4094519de11f",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3118,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.251498+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"e7860f3ce882f71d\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"8d1476b8-9b97-415c-bcbf-4094519de11f\", \"guess\": \"unsure\", \"confidence\": 0.3741}, \"status_code\": 200, \"duration_ms\": 69.265, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.251498+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "e7860f3ce882f71d",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "8d1476b8-9b97-415c-bcbf-4094519de11f",
+                    "guess": "unsure",
+                    "confidence": 0.3741
+                  },
+                  "status_code": 200,
+                  "duration_ms": 69.265,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.4065,
+                "content_id": "5a321739-c846-4af3-b6a0-5fb3e2e1e4c3",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3617,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.323304+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"7a3e4b4f4cc1b266\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"5a321739-c846-4af3-b6a0-5fb3e2e1e4c3\", \"guess\": \"unsure\", \"confidence\": 0.4065}, \"status_code\": 200, \"duration_ms\": 61.179, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.323304+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "7a3e4b4f4cc1b266",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "5a321739-c846-4af3-b6a0-5fb3e2e1e4c3",
+                    "guess": "unsure",
+                    "confidence": 0.4065
+                  },
+                  "status_code": 200,
+                  "duration_ms": 61.179,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.3803,
+                "content_id": "ec02f510-3243-47a8-b8f2-fb6895b5c844",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.3214,
+                "style_score": 0.4898
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.421551+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 276, \"text_sha256\": \"7f221fde6c8317b8\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"ec02f510-3243-47a8-b8f2-fb6895b5c844\", \"guess\": \"unsure\", \"confidence\": 0.3803}, \"status_code\": 200, \"duration_ms\": 73.553, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.421551+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 276,
+                    "text_sha256": "7f221fde6c8317b8",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "ec02f510-3243-47a8-b8f2-fb6895b5c844",
+                    "guess": "unsure",
+                    "confidence": 0.3803
+                  },
+                  "status_code": 200,
+                  "duration_ms": 73.553,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        },
+        {
+          "passed": 10,
+          "total": 10,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "7b400097-c0cf-4669-b974-2e3a9e6dc20d",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.527934+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"7b400097-c0cf-4669-b974-2e3a9e6dc20d\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 38.523, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.527934+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "7b400097-c0cf-4669-b974-2e3a9e6dc20d",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 38.523,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "25ee1fc6-e74a-4f16-ab6d-2857efe88fb6",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.577243+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"25ee1fc6-e74a-4f16-ab6d-2857efe88fb6\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.549, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.577243+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "25ee1fc6-e74a-4f16-ab6d-2857efe88fb6",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.549,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "457a93d8-af8f-486c-85fa-a23e90f991c8",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.641358+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"457a93d8-af8f-486c-85fa-a23e90f991c8\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 42.896, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.641358+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "457a93d8-af8f-486c-85fa-a23e90f991c8",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 42.896,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "33e635a5-35f4-4373-8d5f-83ca429adfc4",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.694950+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"33e635a5-35f4-4373-8d5f-83ca429adfc4\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 42.855, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.694950+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "33e635a5-35f4-4373-8d5f-83ca429adfc4",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 42.855,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "068a36e2-f660-4fd8-91ea-130d040656b3",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.756174+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"068a36e2-f660-4fd8-91ea-130d040656b3\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 51.024, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.756174+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "068a36e2-f660-4fd8-91ea-130d040656b3",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 51.024,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "9b774924-e5fe-42a6-bd33-31232b9b6092",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.821493+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"9b774924-e5fe-42a6-bd33-31232b9b6092\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 50.897, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.821493+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "9b774924-e5fe-42a6-bd33-31232b9b6092",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 50.897,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "64b4fc4f-a718-4640-b202-b0aa06a72804",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.873165+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"64b4fc4f-a718-4640-b202-b0aa06a72804\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 43.442, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.873165+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "64b4fc4f-a718-4640-b202-b0aa06a72804",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 43.442,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "287b51bc-141a-4c8e-87ab-73154f943b1b",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.929223+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"287b51bc-141a-4c8e-87ab-73154f943b1b\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 45.758, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.929223+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "287b51bc-141a-4c8e-87ab-73154f943b1b",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 45.758,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "076f9281-87e9-4ed9-ad18-fe47be2b389b",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:47.977181+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"076f9281-87e9-4ed9-ad18-fe47be2b389b\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 38.888, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:47.977181+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "076f9281-87e9-4ed9-ad18-fe47be2b389b",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 38.888,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "e0d39d3f-8733-4cd2-b305-a49856c693cf",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:48.028309+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"e0d39d3f-8733-4cd2-b305-a49856c693cf\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 40.709, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:48.028309+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "e0d39d3f-8733-4cd2-b305-a49856c693cf",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 40.709,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            }
+          ],
+          "warmup": {
+            "method": "POST",
+            "path": "/submit",
+            "status": 200,
+            "body": {
+              "confidence": 0.6263,
+              "content_id": "a0448bf8-8643-44aa-ab9c-45916264e8d5",
+              "guess": "unsure",
+              "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+              "model_score": 0.7487,
+              "style_score": 0.3989
+            },
+            "log_lines": [
+              "{\"timestamp\": \"2026-11-15T19:40:47.479200+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"a0448bf8-8643-44aa-ab9c-45916264e8d5\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 46.333, \"error\": null}"
+            ],
+            "entries": [
+              {
+                "timestamp": "2026-11-15T19:40:47.479200+00:00",
+                "method": "POST",
+                "path": "/submit",
+                "input": {
+                  "fields": [
+                    "creator_id",
+                    "text"
+                  ],
+                  "text_type": "str",
+                  "text_length": 188,
+                  "text_sha256": "ba0a77d6e378d066",
+                  "has_creator_id": true
+                },
+                "output": {
+                  "content_id": "a0448bf8-8643-44aa-ab9c-45916264e8d5",
+                  "guess": "unsure",
+                  "confidence": 0.6263
+                },
+                "status_code": 200,
+                "duration_ms": 46.333,
+                "error": null
+              }
+            ],
+            "transport_error": null
+          },
+          "durations_ms": [
+            38.523,
+            40.549,
+            42.896,
+            42.855,
+            51.024,
+            50.897,
+            43.442,
+            45.758,
+            38.888,
+            40.709
+          ]
+        },
+        {
+          "passed": 5,
+          "total": 5,
+          "events": [
+            {
+              "method": "POST",
+              "path": "/ping",
+              "status": 200,
+              "body": {
+                "ok": true,
+                "service": "provenance-guard",
+                "you_sent": "regression-trial-3"
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:48.038224+00:00\", \"method\": \"POST\", \"path\": \"/ping\", \"input\": {\"fields\": [\"message\"], \"message_type\": \"str\", \"message_length\": 18, \"message_sha256\": \"cdd2adc9ff29bb1c\"}, \"output\": {\"ok\": true, \"service\": \"provenance-guard\"}, \"status_code\": 200, \"duration_ms\": 0.258, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:48.038224+00:00",
+                  "method": "POST",
+                  "path": "/ping",
+                  "input": {
+                    "fields": [
+                      "message"
+                    ],
+                    "message_type": "str",
+                    "message_length": 18,
+                    "message_sha256": "cdd2adc9ff29bb1c"
+                  },
+                  "output": {
+                    "ok": true,
+                    "service": "provenance-guard"
+                  },
+                  "status_code": 200,
+                  "duration_ms": 0.258,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "GET",
+              "path": "/health",
+              "status": 200,
+              "body": {
+                "detector_loaded": true,
+                "detector_model": "gpt2",
+                "log_entries": 544,
+                "ok": true,
+                "rate_limiting": true
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:48.057291+00:00\", \"method\": \"GET\", \"path\": \"/health\", \"input\": {\"body_type\": \"NoneType\"}, \"output\": {\"ok\": true}, \"status_code\": 200, \"duration_ms\": 8.966, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:48.057291+00:00",
+                  "method": "GET",
+                  "path": "/health",
+                  "input": {
+                    "body_type": "NoneType"
+                  },
+                  "output": {
+                    "ok": true
+                  },
+                  "status_code": 200,
+                  "duration_ms": 8.966,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/submit",
+              "status": 200,
+              "body": {
+                "confidence": 0.6263,
+                "content_id": "4fd9d518-849c-428f-8af2-24a1e55b59a6",
+                "guess": "unsure",
+                "label": "We cannot confidently tell whether this was written by a person or generated by AI.",
+                "model_score": 0.7487,
+                "style_score": 0.3989
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:48.111199+00:00\", \"method\": \"POST\", \"path\": \"/submit\", \"input\": {\"fields\": [\"creator_id\", \"text\"], \"text_type\": \"str\", \"text_length\": 188, \"text_sha256\": \"ba0a77d6e378d066\", \"has_creator_id\": true}, \"output\": {\"content_id\": \"4fd9d518-849c-428f-8af2-24a1e55b59a6\", \"guess\": \"unsure\", \"confidence\": 0.6263}, \"status_code\": 200, \"duration_ms\": 41.423, \"error\": null}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:48.111199+00:00",
+                  "method": "POST",
+                  "path": "/submit",
+                  "input": {
+                    "fields": [
+                      "creator_id",
+                      "text"
+                    ],
+                    "text_type": "str",
+                    "text_length": 188,
+                    "text_sha256": "ba0a77d6e378d066",
+                    "has_creator_id": true
+                  },
+                  "output": {
+                    "content_id": "4fd9d518-849c-428f-8af2-24a1e55b59a6",
+                    "guess": "unsure",
+                    "confidence": 0.6263
+                  },
+                  "status_code": 200,
+                  "duration_ms": 41.423,
+                  "error": null
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "POST",
+              "path": "/appeal",
+              "status": 400,
+              "body": {
+                "error": "missing_fields",
+                "message": "content_id and reasoning are required."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:48.121467+00:00\", \"method\": \"POST\", \"path\": \"/appeal\", \"input\": {\"fields\": []}, \"output\": {\"error\": \"missing_fields\"}, \"status_code\": 400, \"duration_ms\": 0.171, \"error\": \"missing_fields\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:48.121467+00:00",
+                  "method": "POST",
+                  "path": "/appeal",
+                  "input": {
+                    "fields": []
+                  },
+                  "output": {
+                    "error": "missing_fields"
+                  },
+                  "status_code": 400,
+                  "duration_ms": 0.171,
+                  "error": "missing_fields"
+                }
+              ],
+              "transport_error": null
+            },
+            {
+              "method": "GET",
+              "path": "/content/68ae7b23-92e8-4420-8222-1dcaf103338a",
+              "status": 404,
+              "body": {
+                "error": "not_found",
+                "message": "No submission exists with that content_id."
+              },
+              "log_lines": [
+                "{\"timestamp\": \"2026-11-15T19:40:48.140521+00:00\", \"method\": \"GET\", \"path\": \"/content/68ae7b23-92e8-4420-8222-1dcaf103338a\", \"input\": {\"body_type\": \"NoneType\"}, \"output\": {\"error\": \"not_found\"}, \"status_code\": 404, \"duration_ms\": 8.342, \"error\": \"not_found\"}"
+              ],
+              "entries": [
+                {
+                  "timestamp": "2026-11-15T19:40:48.140521+00:00",
+                  "method": "GET",
+                  "path": "/content/68ae7b23-92e8-4420-8222-1dcaf103338a",
+                  "input": {
+                    "body_type": "NoneType"
+                  },
+                  "output": {
+                    "error": "not_found"
+                  },
+                  "status_code": 404,
+                  "duration_ms": 8.342,
+                  "error": "not_found"
+                }
+              ],
+              "transport_error": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
