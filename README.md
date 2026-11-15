@@ -1069,7 +1069,89 @@ I chose Shape A — Deploy and Instrument, using Path B — Local with Logs. The
 This capstone intentionally excludes changes to the existing AI-detection algorithms, additional detection capabilities or API endpoints, and deployment to a public hosting service. Keeping these features out of scope allows me to focus on completing and evaluating one operational extension.
 
 
+---
+
+**Running It**
+
+I selected Path B — Local with Logs. The application runs locally
+using Flask and a GPT-2 model. Complete setup instructions, pinned
+dependencies, and the startup command are documented in `RUNNING.md`.
+
+I verified reproducibility by cloning the repository into a separate
+folder, creating a new virtual environment, and running the application.
+The original environment checks passed (9/9), all seven capstone
+regression tests passed, and a real HTTP request successfully generated
+an operational log entry.
+
+**Instrumentation**
+
+I added `operational_logging.py` and integrated it into the Flask
+request lifecycle in `app.py`.
+
+Each request produces a structured JSONL record containing a UTC
+timestamp, HTTP method, endpoint, input summary, output summary,
+HTTP status code, processing duration in milliseconds, and error
+information when applicable.
+
+Submitted text is represented by its length and a shortened SHA-256
+fingerprint rather than its complete contents.
+
+Operational records are stored in `logs/operations.jsonl`,
+separately from the existing `logs/audit.jsonl`.
+
+I warmed up GPT-2 and submitted the same 188-character text ten times
+using separate creator IDs. All ten requests returned HTTP 200 with
+the classification `unsure` and confidence `0.6263`.
+
+I also deliberately submitted empty text. The application returned
+HTTP 400 with `empty_text`, and the failure was captured in the log.
+
+**Eleven real operational log entries:**
+
+```json
+{"timestamp": "2026-11-15T19:17:36.375298+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "5e2c7dcc-00c7-4b01-a3ee-7b89acf95206", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 35.966, "error": null}
+{"timestamp": "2026-11-15T19:17:36.420267+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "4b6317f0-23ce-4231-8cfa-8830f7d525b9", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 38.117, "error": null}
+{"timestamp": "2026-11-15T19:17:36.467297+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "40437d3e-8850-4f87-95f3-f6dddd7b68ce", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 41.199, "error": null}
+{"timestamp": "2026-11-15T19:17:36.514408+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "b784d6b7-fa2e-4e1a-b0a8-107be5f09803", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 43.874, "error": null}
+{"timestamp": "2026-11-15T19:17:36.564708+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "0517ba01-432a-47e8-8acb-d7d9200bc3e8", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 46.012, "error": null}
+{"timestamp": "2026-11-15T19:17:36.609887+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "cee93ad2-f241-45fd-b4a7-f986222e861f", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 42.562, "error": null}
+{"timestamp": "2026-11-15T19:17:36.661697+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "05fa3ecf-a7ad-41a9-a2f4-9dbefe8629eb", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 47.641, "error": null}
+{"timestamp": "2026-11-15T19:17:36.709732+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "d9575d26-9208-40e6-808a-e499cd82f93c", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 44.516, "error": null}
+{"timestamp": "2026-11-15T19:17:36.754220+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "52a6ec3d-14f3-4c14-8cc6-cb1b39e853cc", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 42.409, "error": null}
+{"timestamp": "2026-11-15T19:17:36.800994+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 188, "text_sha256": "ba0a77d6e378d066", "has_creator_id": true}, "output": {"content_id": "e64603f3-0419-4dfd-a177-1c6d1e668800", "guess": "unsure", "confidence": 0.6263}, "status_code": 200, "duration_ms": 42.832, "error": null}
+{"timestamp": "2026-11-15T19:18:04.682621+00:00", "method": "POST", "path": "/submit", "input": {"fields": ["creator_id", "text"], "text_type": "str", "text_length": 0, "text_sha256": "e3b0c44298fc1c14", "has_creator_id": true}, "output": {"error": "empty_text"}, "status_code": 400, "duration_ms": 0.9, "error": "empty_text"}
+```
+
+**What It Costs**
+
+I measured execution time using the `duration_ms` field recorded by
+the Flask operational logging hooks.
+
+After one model warm-up request, I submitted the same 188-character
+text ten times and calculated the mean processing duration.
+
+- Measured runs: 10
+- Average duration: 42.5128 milliseconds
+- Minimum duration: 35.966 milliseconds
+- Maximum duration: 47.641 milliseconds
+- Average time per run: 0.0425128 seconds
+- Paid inference API cost: $0 (the model runs locally)
+
+For 100 users making one submission each per day:
+
+100 x 0.0425128 = 4.25128 seconds
+
+At the observed warm-model rate, 100 submissions would therefore
+consume approximately 4.25 seconds of aggregate server-side
+processing time, assuming similar inputs and conditions.
+
+This measurement excludes model startup, initial downloads,
+concurrent-request effects, electricity costs, and hardware costs.
+It represents server-side elapsed request time, not CPU usage or
+a complete monetary hosting estimate.
+
 
 ---
 
 📖 **How to run this project: [RUNNING.md](RUNNING.md)**
+
