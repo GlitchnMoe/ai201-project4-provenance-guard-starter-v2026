@@ -72,6 +72,7 @@ def write_request_log(
     output_summary,
     status_code,
     duration_ms,
+    request_id,
 ):
     """Append one structured record for an HTTP request."""
     entry = {
@@ -81,6 +82,7 @@ def write_request_log(
         "input": input_summary,
         "output": output_summary,
         "status_code": status_code,
+        "request_id": request_id,
         "duration_ms": round(duration_ms, 3),
         "error": (
             output_summary.get("error", "http_error")

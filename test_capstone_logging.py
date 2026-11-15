@@ -37,6 +37,11 @@ class CapstoneLoggingTests(unittest.TestCase):
         self.assertEqual(len(lines), 1)
 
         entry = json.loads(lines[0])
+        request_id = response.headers.get("X-Request-ID")
+
+        self.assertIsNotNone(request_id)
+        self.assertRegex(request_id, r"^[0-9a-f]{32}$")
+        self.assertEqual(entry.get("request_id"), request_id)
 
         required = {
             "timestamp", "method", "path", "input",
@@ -54,6 +59,37 @@ class CapstoneLoggingTests(unittest.TestCase):
             self.assertIsNone(entry["error"])
 
         return entry
+    def test_request_ids_are_unique(self):
+        """Verify separate requests receive different correlation IDs."""
+
+        first = self.client.post(
+            "/ping",
+            json={"message": "first"}
+        )
+
+        second = self.client.post(
+            "/ping",
+            json={"message": "second"}
+        )
+
+        first_id = first.headers.get("X-Request-ID")
+        second_id = second.headers.get("X-Request-ID")
+
+        self.assertIsNotNone(first_id)
+        self.assertIsNotNone(second_id)
+        self.assertNotEqual(first_id, second_id)
+
+        lines = self.log_path.read_text(
+            encoding="utf-8"
+        ).splitlines()
+
+        self.assertEqual(len(lines), 2)
+
+        entries = [json.loads(line) for line in lines]
+
+        self.assertEqual(entries[0]["request_id"], first_id)
+        self.assertEqual(entries[1]["request_id"], second_id)
+
 
     def test_ping_still_works(self):
         response = self.client.post(

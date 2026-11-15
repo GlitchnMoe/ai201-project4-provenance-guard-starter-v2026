@@ -48,6 +48,7 @@ def start_request_timer():
     """Start timing every incoming HTTP request."""
     g._operational_start = time.perf_counter()
     g._operational_logged = False
+    g._operational_request_id = uuid.uuid4().hex
 
 
 def save_operational_record(status_code, response_data):
@@ -62,6 +63,7 @@ def save_operational_record(status_code, response_data):
     operational_logging.write_request_log(
         method=request.method,
         path=request.path,
+        request_id=g._operational_request_id,
         input_summary=operational_logging.summarize_input(
             request.get_json(silent=True)
         ),
@@ -75,9 +77,14 @@ def save_operational_record(status_code, response_data):
     g._operational_logged = True
 
 
+
 @app.after_request
 def log_operational_response(response):
-    """Record successful requests and HTTP error responses."""
+    """Attach a request ID and log the completed HTTP request."""
+
+    # Use the same ID in the response and operational log.
+    response.headers["X-Request-ID"] = g._operational_request_id
+
     try:
         save_operational_record(
             response.status_code,
