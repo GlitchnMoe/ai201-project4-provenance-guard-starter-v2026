@@ -26,8 +26,9 @@ Routes:
 """
 
 import uuid
+import time
 
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, g
 
 import audit
 import config
@@ -35,8 +36,74 @@ import detector
 
 import stylometry
 import scoring
+import operational_logging
 
 app = Flask(__name__)
+
+
+# ── CAPSTONE: Operational Observability ───────────────────────────────────────
+
+@app.before_request
+def start_request_timer():
+    """Start timing every incoming HTTP request."""
+    g._operational_start = time.perf_counter()
+    g._operational_logged = False
+
+
+def save_operational_record(status_code, response_data):
+    """Write one operational record without changing application behavior."""
+    if g.get("_operational_logged", False):
+        return
+
+    duration_ms = (
+        time.perf_counter() - g._operational_start
+    ) * 1000
+
+    operational_logging.write_request_log(
+        method=request.method,
+        path=request.path,
+        input_summary=operational_logging.summarize_input(
+            request.get_json(silent=True)
+        ),
+        output_summary=operational_logging.summarize_output(
+            response_data
+        ),
+        status_code=status_code,
+        duration_ms=duration_ms,
+    )
+
+    g._operational_logged = True
+
+
+@app.after_request
+def log_operational_response(response):
+    """Record successful requests and HTTP error responses."""
+    try:
+        save_operational_record(
+            response.status_code,
+            response.get_json(silent=True),
+        )
+    except Exception:
+        app.logger.exception("Failed to write operational log")
+
+    return response
+
+
+@app.teardown_request
+def log_unhandled_exception(exc):
+    """Record unexpected failures that bypass normal response handling."""
+    if exc is None or g.get("_operational_logged", False):
+        return
+
+    try:
+        save_operational_record(
+            500,
+            {"error": type(exc).__name__},
+        )
+    except Exception:
+        app.logger.exception("Failed to log unhandled exception")
+
+# ── End Capstone Observability ────────────────────────────────────────────────
 
 
 # ── Rate limiting — UNIT 8 ────────────────────────────────────────────────────
