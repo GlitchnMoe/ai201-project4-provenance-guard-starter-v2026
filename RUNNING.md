@@ -297,6 +297,133 @@ in your handler.
 
 ---
 
+## Capstone — Reproducible Local Run (Unit 9)
+
+**Deployment path:** Path B — Local with Logs
+
+Provenance Guard runs locally using Flask and a GPT-2 detection model. The system does not require an API key or a paid hosting service.
+
+### Environment
+
+- Operating system tested: Windows with PowerShell
+- Python: 3.12.10
+- Flask: 3.1.3
+- Flask-Limiter: 3.12
+- Transformers: 4.57.6
+- PyTorch: 2.15.0
+- Requests: 2.34.2
+- Gunicorn: 23.0.0 (installed, not used for Windows local startup)
+- Certifi: 2026.10.23
+- Model: `gpt2`
+- Model download: approximately 550 MB, cached locally
+- Host: `127.0.0.1`
+- Port: `5000`
+
+Exact dependency versions are captured in
+`requirements-capstone-lock.txt`.
+
+### Setup from a fresh checkout
+
+Open Windows PowerShell:
+
+```powershell
+git clone https://github.com/GlitchnMoe/ai201-project4-provenance-guard-starter-v2026.git
+cd ai201-project4-provenance-guard-starter-v2026
+
+python --version
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+python -m pip install -r requirements-capstone-lock.txt
+python detector.py
+python test.py
+```
+
+Python should report version 3.12.10.
+
+The `detector.py` command initializes and downloads the model
+if it is not already cached.
+
+### Starting the application
+
+From the project directory, with the virtual environment activated,
+use this single PowerShell command:
+
+```powershell
+$env:AI201_DEBUG='0'; python app.py
+```
+
+The application should be accessible at:
+
+`http://127.0.0.1:5000`
+
+Debug mode is disabled to avoid the development server's automatic
+reloader during operational measurements.
+
+### Verify the service
+
+Open a second PowerShell terminal and run:
+
+```powershell
+Invoke-RestMethod -Method Post -Uri http://127.0.0.1:5000/ping -ContentType "application/json" -Body '{"message":"hello"}'
+```
+
+A successful response includes `ok: true`, `service: provenance-guard`,
+and the submitted message.
+
+### Operational logging
+
+Every completed HTTP request is recorded in:
+
+`logs/operations.jsonl`
+
+Each JSONL record contains:
+
+- Timestamp
+- HTTP method and endpoint
+- Input summary
+- Output summary
+- HTTP status code
+- Execution duration in milliseconds
+- Error information, when applicable
+
+Full submitted writing is not stored in the operational log.
+
+The pre-existing audit log remains separate:
+
+`logs/audit.jsonl`
+
+To inspect recent operational records:
+
+```powershell
+Get-Content .\logs\operations.jsonl -Tail 10
+```
+
+The application's latency can be examined using each record's
+`duration_ms` field.
+
+### Stopping the application
+
+Press `Ctrl+C` in the terminal running the Flask server.
+
+### Deployment decision
+
+I selected local execution because the application loads GPT-2
+using PyTorch. The model weights alone require approximately 550 MB
+of disk space, and execution also requires memory for the model,
+PyTorch, and the Flask application.
+
+A free hosting instance with 512 MB RAM would not provide enough
+memory for this setup.
+
+Local execution allows me to demonstrate the working application,
+collect persistent operational logs, and measure its performance
+without changing the detection system.
+
+
+
+---
+
 ## A note on committing
 
 At least four new commits in unit 7, four more in unit 8.
