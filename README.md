@@ -1053,4 +1053,23 @@ If this system ran for real, I would bias it toward avoiding false accusations e
 
 ---
 
+
+## Capstone
+
+**What This Extends**
+
+This capstone extends Project 4, Provenance Guard, an AI-generated text detection system built using Flask. The existing application analyzes submitted writing using model-based detection and stylometric analysis, combines the detection signals, and supports submissions, appeals, and audit logging.
+
+The new extension adds an operational observability layer that records application activity in structured JSONL logs. These records will capture request inputs, outputs, timestamps, execution durations, and errors, allowing the system's performance and behavior to be measured and diagnosed.
+
+**The Shape**
+
+I chose Shape A — Deploy and Instrument, using Path B — Local with Logs. The goal is to make Provenance Guard reproducible, observable, and measurable without changing its core detection functionality. The extension will introduce structured request logging, latency measurements, and failure tracking. I will also document how to run the application locally and measure the cost of executing requests.
+
+This capstone intentionally excludes changes to the existing AI-detection algorithms, additional detection capabilities or API endpoints, and deployment to a public hosting service. Keeping these features out of scope allows me to focus on completing and evaluating one operational extension.
+
+
+
+---
+
 📖 **How to run this project: [RUNNING.md](RUNNING.md)**
