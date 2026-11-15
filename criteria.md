@@ -138,3 +138,57 @@ Invalid input should be rejected before it reaches the detector because missing 
      A number you missed stays where it is, gets diagnosed, and gets a fix
      attempted. That's where the points are.
      ───────────────────────────────────────────────────────────────────────── -->
+
+---
+
+## Unit 9 Capstone — Acceptance Criteria
+
+These five criteria evaluate the operational observability extension added to Provenance Guard. Criteria 1–4 focus on the new instrumentation, while Criterion 5 checks that the existing application continues functioning correctly.
+
+Each criterion will be tested in three independent trials without changing the application between trials.
+
+**Shared test input:** For valid detection submissions, the standard input will be:
+
+"Artificial intelligence is transforming the way people work, learn, and communicate. These systems can automate repetitive tasks, generate written content, and assist with decision making."
+
+This input contains 188 characters. Unique creator IDs will be used to prevent the existing per-creator rate limit from interfering with the evaluation.
+
+### 1. Structured Logging Completeness
+
+**Criterion:** In each trial, ten completed HTTP requests (five valid `/ping` requests and five valid `/submit` requests) must generate exactly ten corresponding records in `logs/operations.jsonl`, with no missing or duplicate records. All ten records must contain a valid UTC timestamp, HTTP method, endpoint, input summary, output summary, status code, numeric nonnegative processing duration, and error field. The logged status code must match the actual HTTP response.
+
+**Target:** 10 of 10 complete and correctly matched records in each of three trials.
+
+**Why this target:** Missing even one request would make it impossible to reconstruct all application activity during that test. Since the extension exists specifically to make the application observable, I chose 100% completeness rather than allowing occasional missing records.
+
+### 2. Failure Logging and Error Visibility
+
+**Criterion:** In each trial, submit three invalid requests to `/submit`: one missing the `text` field, one containing empty text, and one containing numeric text. All three must return HTTP 400 and produce exactly one corresponding operational log record containing the endpoint, input summary, HTTP 400 status, nonempty error information, and processing duration.
+
+**Target:** 3 of 3 failed requests recorded correctly in each of three trials.
+
+**Why this target:** Failed requests are especially important to diagnose because they reveal where the application rejects unexpected input. I chose 100% failure logging because even occasional missing errors would undermine the main purpose of the observability extension.
+
+### 3. Input Privacy in Operational Logs
+
+**Criterion:** In each trial, submit five valid text samples containing different unique private markers. For every request, the operational log must record the correct text length and a 16-character SHA-256 fingerprint without storing the complete submitted text or the private marker. Each request must also return HTTP 200.
+
+**Target:** 5 of 5 requests preserve the expected summary fields without exposing the original text or private markers in each of three trials.
+
+**Why this target:** Provenance Guard processes writing that may contain private information, and operational logs may be retained or committed as evidence. I chose zero plaintext exposure because allowing even one complete submission into the operational log could unnecessarily disclose user content.
+
+### 4. Warm-Model Processing Latency
+
+**Criterion:** After one unmeasured model warm-up request, submit the same fixed 188-character sample ten times sequentially using unique creator IDs. At least nine of the ten successful requests must have a recorded `duration_ms` value of 60 milliseconds or less.
+
+**Target:** At least 9 of 10 requests at or below 60 milliseconds in each of three trials.
+
+**Why this target:** Initial measurements showed an average warm-model processing time of 42.5128 milliseconds. A 60-millisecond target allows approximately 41% additional processing time for normal fluctuations while still detecting meaningful performance degradation. Requiring nine of ten requests to meet the limit allows one occasional slow request without accepting consistently poor performance.
+
+### 5. Existing Application Regression Protection
+
+**Criterion:** In each trial, test five existing API behaviors: a valid `/ping` request returns HTTP 200 with `ok: true`; `/health` returns HTTP 200 with `ok: true`; a valid `/submit` request returns HTTP 200 with `content_id`, `guess`, and `confidence`; an empty `/appeal` request returns HTTP 400 with an error response; and a lookup for a nonexistent content ID returns HTTP 404 with an error response.
+
+**Target:** All 5 of 5 behaviors must return the expected status codes and response fields in each of three trials.
+
+**Why this target:** Adding instrumentation should not break functionality that already worked in previous units. I chose 100% because these are established API behaviors, and failures would mean the operational extension introduced a regression rather than simply adding visibility.
